@@ -1,0 +1,88 @@
+<div class="unmconf-wrapper">
+
+  <!---UNMCONF LEFT DATA START-->
+  <div class="unmconf-left-data">
+    <div class="title-left-border"></div>
+    <div class="logo-search">
+      <div class="logo"><img src="../../../assets/images/logo.png" alt="FiberHome"></div>
+      <div class="search">
+        <form nz-form>
+          <nz-form-item>
+            <nz-input-group [nzSuffix]="suffixIconSearch">
+              <input type="text" nz-input placeholder="{{translate.instant('search')}}"  [(ngModel)]="searchText"  [ngModelOptions]="{standalone: true}" />
+            </nz-input-group>
+            <ng-template #suffixIconSearch>
+              <i *ngIf="searchText == undefined" nz-icon nzType="search"></i>
+              <i *ngIf="searchText != undefined" nz-icon nzType="close-circle" nzTheme="outline" (click)="clearSearch()"></i>
+            </ng-template>
+          </nz-form-item>
+        </form>
+      </div>
+    </div>
+
+    <div class="unfnav-data">
+      <nz-collapse nzAccordion>
+        <nz-collapse-panel *ngFor="let panel of panels" nzHeader="{{translate.instant(panel.name)}}" [nzActive]="panel.active">
+          <ul>
+            <li *ngFor="let child of panel.childPanel |  pipe: {name: searchText};" #someVar><a
+                [ngClass]="{'router-link-active': child.name === loadTabContent}"
+                (click)="newTab(child.name)">{{translate.instant(child.name)}}</a></li>
+          </ul>
+        </nz-collapse-panel>
+      </nz-collapse>
+    </div>
+
+  </div>
+  <!---UNMCONF LEFT DATA END-->
+
+  <!---UNMCONF RIGHT DATA START-->
+  <div class="unmconf-right-data">
+    <!--HEADER START-->
+    <div class="unconf-right-header">
+      <div class="left-header">
+        <h1>{{translate.instant('NBI Configuration')}}</h1>
+        <div class="breadcrumb">
+          <nz-breadcrumb>
+            <nz-breadcrumb-item>
+              <a [routerLink]="['/configuration-tools']">{{translate.instant('Home')}}</a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+                {{translate.instant(loadTabContent)}}
+            </nz-breadcrumb-item>
+          </nz-breadcrumb>
+        </div>
+      </div>
+      <div class="right-header">
+        <ul>
+          <li><i nz-icon nzType="user" nzTheme="outline"></i><span>{{ translate.instant(username) }}</span></li>
+          <li><a routerLink = "/login"><img src="../../../assets/images/logout.png">{{translate.instant('Logout')}} </a></li>
+        </ul>
+      </div>
+    </div>
+    <!--HEADER END-->
+
+    <!--=====PAGEDATA START=====-->
+    <div class="unconf-right-page-data">
+      <nz-tabset [nzType]="'card'" [nzSelectedIndex]="index">
+        <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate">
+          <ng-template #titleTemplate>
+            <div (click)="switchTab(tab)">{{translate.instant(tab) }}<i nz-icon [nzType]="tab === 'Common Configuration'? '' : 'close'" class="ant-tabs-close-x"
+                (click)="closeTab(tab)"></i></div>
+          </ng-template>
+        </nz-tab>
+      </nz-tabset>
+      <div class="tab-content" [ngSwitch]="loadTabContent">
+        <!-- Common Configuration start -->
+        <app-common-configuration *ngSwitchCase="'Common Configuration'"></app-common-configuration>
+        <app-corba-configuration *ngSwitchCase="'Corba Configuration'"></app-corba-configuration>
+        <app-i2-configuration *ngSwitchCase="'I2 Configuration'"></app-i2-configuration>
+        <app-socket-configuration *ngSwitchCase="'Socket Configuration'"></app-socket-configuration>
+        <!-- Common Conguration end -->
+      </div>
+    </div>
+    <!--======PAGEDATA END====-->
+
+  </div>
+  <!---UNMCONF RIGHT DATA END-->
+
+</div>

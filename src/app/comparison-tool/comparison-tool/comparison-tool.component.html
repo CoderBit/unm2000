@@ -1,0 +1,53 @@
+<div class="configuration-tool-wrapper">
+  <div class="conf-tool-header">
+    <div class="logo">
+      <img src="../../../assets/images/logo.png" alt="fiberHome">
+      
+    </div>
+    <div class="breadcrumb">
+        <nz-breadcrumb>
+          <nz-breadcrumb-item>
+            <a [routerLink]="['/configuration-tools']">Home</a>
+          </nz-breadcrumb-item>
+          
+          <nz-breadcrumb-item>
+          Configuration Comparison 
+          </nz-breadcrumb-item>
+        </nz-breadcrumb>
+      </div>
+ 
+    <div class="right-top-menu">
+      <ul>
+        <li><i nz-icon nzType="user" nzTheme="outline"></i><span>{{ username }}</span></li>
+        <li><a routerLink = "/login"><img src="../../../assets/images/logout.png">Logout </a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conf-tool-nav">
+    <div class="logo">
+      <img src="../../../assets/images/logo.png" alt="UNM Configuration Comparison Tool">
+    </div>
+    
+    <h2>UMC<sup>2</sup> Configuration Comparison Tool</h2>
+    <ul>
+      <li>
+        <a routerLink='folder-comparison'>
+          <img src="../../../assets/images/u5738.png" alt="Folder Comparison">
+          <span>Folder Comparison</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink='file-comparison'>
+          <img src="../../../assets/images/u5731.png" alt="File Comparison">
+          <span>File Comparison</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink='custom-keyword'>
+          <img src="../../../assets/images/u5724.png" alt="Custom Keyword">
+          <span>Custom Keyword</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

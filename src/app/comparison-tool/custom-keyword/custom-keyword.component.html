@@ -1,0 +1,84 @@
+<div class="unmconf-wrapper">
+
+  <!---UNMCONF LEFT DATA START-->
+  <div class="unmconf-left-data">
+    <div class="title-left-border"></div>
+    <div class="logo-search">
+      <div class="logo"><img src="../../../assets/images/logo.png" alt="FiberHome"></div>
+      <div class="search">
+        <form nz-form>
+          <nz-form-item>
+            <nz-input-group [nzSuffix]="suffixIconSearch">
+              <!-- <input type="text" nz-input placeholder="search"  [(ngModel)]="searchText"  [ngModelOptions]="{standalone: true}" /> -->
+              <input type="text" nz-input placeholder="search" />
+            </nz-input-group>
+            <ng-template #suffixIconSearch>
+              <i nz-icon nzType="search"></i>
+              <!-- <i *ngIf="searchText == undefined" nz-icon nzType="search"></i>
+              <i *ngIf="searchText != undefined" nz-icon nzType="close-circle" nzTheme="outline" (click)="clearSearch()"></i> -->
+            </ng-template>
+          </nz-form-item>
+        </form>
+      </div>
+    </div>
+
+    <div class="unfnav-data">
+      <nz-collapse nzAccordion>
+        <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active">
+          <ul>
+            <li *ngFor="let child of panel.childPanel |  pipe: {name: searchText};" #someVar><a
+                [ngClass]="{'router-link-active': child.name === loadTabContent}"
+                (click)="newTab(child.name)">{{ child.name }}</a></li>
+          </ul>
+        </nz-collapse-panel>
+      </nz-collapse>
+    </div>
+
+  </div>
+  <!---UNMCONF LEFT DATA END-->
+
+  <!---UNMCONF RIGHT DATA START-->
+  <div class="unmconf-right-data">
+    <!--HEADER START-->
+    <div class="unconf-right-header">
+      <div class="left-header">
+        <h1>Custom Keyword</h1>
+        <div class="breadcrumb">
+          <nz-breadcrumb>
+            <nz-breadcrumb-item>
+              <a [routerLink]="['/configuration-tools']">Home</a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+              <a [routerLink]="['/comparison-tool']">Configuration Comparison</a>
+            </nz-breadcrumb-item>
+            <nz-breadcrumb-item>
+              {{ loadTabContent }}
+            </nz-breadcrumb-item>
+          </nz-breadcrumb>
+        </div>
+      </div>
+      <div class="right-header">
+        <ul>
+          <li><i nz-icon nzType="user" nzTheme="outline"></i><span>{{ username }}</span></li>
+          <li><a routerLink = "/login"><img src="../../../assets/images/logout.png">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--HEADER END-->
+
+    <!--=====PAGEDATA START=====-->
+    <div class="unconf-right-page-data">
+      <div class="tab-content" [ngSwitch]="loadTabContent">
+        <!-- Common Configuration start -->
+        <app-key-file-management *ngSwitchCase="'Key File Management'"></app-key-file-management>
+        <app-special-character-configuration *ngSwitchCase="'Special Character Configuration'">
+        </app-special-character-configuration>
+        <!-- Common Conguration end -->
+      </div>
+    </div>
+    <!--======PAGEDATA END====-->
+
+  </div>
+  <!---UNMCONF RIGHT DATA END-->
+
+</div>

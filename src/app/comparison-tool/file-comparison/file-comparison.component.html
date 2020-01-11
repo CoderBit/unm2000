@@ -1,0 +1,211 @@
+<div class="unmconf-wrapper">
+
+  <!---UNMCONF LEFT DATA START-->
+
+  <!-- <div class="logo-search">
+            
+            
+          </div> -->
+
+
+
+
+  <!---UNMCONF LEFT DATA END-->
+
+  <!---UNMCONF RIGHT DATA START-->
+  <div class="unmconf-right-data" style="width: 100%;">
+    <!--HEADER START-->
+    <div class="unconf-right-header">
+      <div class="logo">
+        <div class="conorlog">
+          <img src="../../../assets/images/logo.png" alt="FiberHome">
+        </div>
+
+        <div class="left-header" style="float: right; margin: 0px 34px;">
+          <h1>File Comparison</h1>
+          <div class="breadcrumb">
+            <nz-breadcrumb>
+              <nz-breadcrumb-item>
+                <a [routerLink]="['/configuration-tools']">Home</a>
+              </nz-breadcrumb-item>
+              <nz-breadcrumb-item>
+                <a [routerLink]="['/comparison-tool']">Configuration Comparison</a>
+              </nz-breadcrumb-item>
+              <nz-breadcrumb-item>
+                {{ loadTabContent }}
+              </nz-breadcrumb-item>
+            </nz-breadcrumb>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="right-header">
+        <ul>
+          <li><i nz-icon nzType="user" nzTheme="outline"></i><span>{{ username }}</span></li>
+          <li><a routerLink="/login"><img src="../../../assets/images/logout.png">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--HEADER END-->
+
+    <!--=====PAGEDATA START=====-->
+    <div class="unconf-right-page-data">
+      <!-- <nz-tabset [nzType]="'card'" [nzSelectedIndex]="index">
+              <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate"> -->
+      <!-- <ng-template #titleTemplate>
+                  <div (click)="switchTab(tab)">{{ tab }}<i nz-icon nzType="close" class="ant-tabs-close-x" (click)="closeTab(tab)"></i></div>
+                </ng-template> -->
+      <div class="tab-content">
+        <div class="action-div">
+          <div class="input-div">
+            <img src="../../../assets/images/icons/result-path.png" width="32" height="32" alt="FiberHome">
+            <nz-form-label>Result Path </nz-form-label>
+            <input nz-input placeholder="Enter path here" [(ngModel)]='resultpath'>
+            <img src="../../../assets/images/icons/Compare.png" width="32" height="32" alt="FiberHome">
+            <p class="compare" (click)="compare()">Compare</p>
+            <img src="../../../assets/images/icons/line.png" height="26" alt="FiberHome" style="margin-top: 5px;">
+
+
+            <!-- <img src="../../../assets/images/icons/Stop.png" width="32" height="32" alt="FiberHome">
+            <p class="stop">Stop</p>
+            <img src="../../../assets/images/icons/line.png" height="26" alt="FiberHome" style="margin-top: 5px;">
+
+
+            <img src="../../../assets/images/icons/checked-result.png" width="32" height="32" alt="FiberHome">
+            <p class="result">Check result</p>
+            <img src="../../../assets/images/icons/line.png" height="26" alt="FiberHome" style="margin-top: 5px;"> -->
+
+            <nz-form-label>Filter By </nz-form-label>
+            <!-- <input nz-input placeholder="Enter path here"> -->
+            <div class="tagdiv">
+              <nz-tag *ngFor="let tag of tags; let i = index">
+                {{ sliceTagName(tag) }}
+              </nz-tag>
+            </div>
+            <!-- <nz-tag *ngIf="!inputVisible" class="editable-tag" nzNoAnimation (click)="showInput()">
+      <i nz-icon nzType="plus"></i> New Tag
+    </nz-tag>
+    <input
+      #inputElement
+      nz-input
+      nzSize="small"
+      *ngIf="inputVisible"
+      type="text"
+      [(ngModel)]="inputValue"
+      style="width: 78px;"
+      (blur)="handleInputConfirm()"
+      (keydown.enter)="handleInputConfirm()"
+    /> -->
+            <img src="../../../assets/images/icons/Filter.png" width="24" height="25" alt="FiberHome" class="filter"
+              (click)="showModal()">
+            <img src="../../../assets/images/icons/search.png" width="39" height="33" alt="FiberHome">
+          </div>
+        </div>
+        <!-- Common Configuration start -->
+        <!-- <app-common-configuration *ngSwitchCase="'Common Configuration'"></app-common-configuration> -->
+        <!-- Common Conguration end -->
+
+
+        <div class="table-div">
+          <table>
+            <tr>
+              <td class="top-media-left">
+                <input nz-input placeholder="Enter path here" [(ngModel)]='sourcepath'>
+              </td>
+              <td class="top-media-right">
+                <input nz-input placeholder="Enter path here" [(ngModel)]='targetpath'>
+              </td>
+            </tr>
+            <tr>
+              <td class="second-media-left" id='second-media-left'>
+             <textarea cols="100" disabled> {{before}}</textarea>
+              </td>
+              <td class="second-media-right" ids="second-media-right">
+             <textarea cols="100" disabled> {{after}}</textarea>
+
+                  <!-- <p style="line-height: 3;  font-size: 18px;">{{after}}</p> -->
+                  <!-- <img src="../../../assets/images/file-compare.png" alt="FiberHome"> -->
+              </td>
+            </tr>
+            <!-- <tr>
+              <td class="third-media-left" colspan="2">
+                <img src="../../../assets/images/icons/right-arrow.png" width="15" height="10" alt="FiberHome">
+              </td>
+            </tr>
+            <tr>
+              <td class="third-media-left" colspan="2">
+                <img src="../../../assets/images/icons/left-arrow.png" width="15" height="10" alt="FiberHome">
+              </td>
+            </tr> -->
+
+          </table>
+        </div>
+
+      </div>
+      <!-- </nz-tab>
+            </nz-tabset> -->
+    </div>
+    <!--======PAGEDATA END====-->
+
+  </div>
+  <!---UNMCONF RIGHT DATA END-->
+
+</div>
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Filter By" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="handleOk()">
+    <nz-form-item *ngFor="let control of listOfControl; let i = index">
+      <nz-form-control [nzXs]="11" [nzSm]="11" nzErrorTip="Please input passenger's name or delete this field.">
+        <nz-input-group nzCompact>
+          <nz-select [attr.id]="control.id" [formControlName]="control.controlInstanceFirst" nzPlaceHolder="Select"
+            class="passenger-input">
+            <nz-option [nzLabel]="'Element'" [nzValue]="'Element'"></nz-option>
+            <nz-option [nzLabel]="'Attribute'" [nzValue]="'Attribute'"></nz-option>
+          </nz-select>
+        </nz-input-group>
+      </nz-form-control>
+      <nz-form-control [nzXs]="11" [nzSm]="11" nzErrorTip="Please input passenger's name or delete this field.">
+        <input class="passenger-input" nz-input placeholder="Attribute" [attr.id]="control.id"
+          [formControlName]="control.controlInstance" />
+        <i nz-icon nzType="minus-circle-o" class="dynamic-delete-button" (click)="removeField(control, $event)"></i>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-control [nzXs]="2" [nzSm]="2" style="position: absolute; z-index: 99; top: 79px; right: 15px;">
+      <i nz-icon nzType="plus-circle-o" class="dynamic-add-button" (click)="addField($event)"></i>
+    </nz-form-control>
+    <nz-form-item>
+    </nz-form-item>
+  </form>
+</nz-modal>
+
+<nz-modal [(nzVisible)]="search" nzTitle="Search" (nzOnCancel)="searchCancel()" (nzOnOk)="searchOk()">
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item *ngFor="let control of listOfControl; let i = index">
+      <nz-form-control [nzXs]="12" [nzSm]="12" nzErrorTip="Please input passenger's name or delete this field.">
+        <nz-input-group nzCompact>
+          <nz-select [attr.id]="control.id" [formControlName]="control.controlInstanceFirst" nzPlaceHolder="Select"
+            class="passenger-input">
+            <nz-option [nzLabel]="'Element'" [nzValue]="'Element'"></nz-option>
+            <nz-option [nzLabel]="'Attribute'" [nzValue]="'Attribute'"></nz-option>
+          </nz-select>
+        </nz-input-group>
+      </nz-form-control>
+
+      <nz-form-control [nzXs]="12" [nzSm]="12" nzErrorTip="Please input passenger's name or delete this field.">
+        <input class="passenger-input" nz-input placeholder="Attribute" [attr.id]="control.id"
+          [formControlName]="control.controlInstance" />
+        <i nz-icon nzType="minus-circle-o" class="dynamic-delete-button" (click)="removeField(control, $event)"></i>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button nzType="dashed" class="add-button" (click)="addField($event)">
+          <i nz-icon nzType="plus"></i>
+          Add field
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+
+  </form>
+</nz-modal>

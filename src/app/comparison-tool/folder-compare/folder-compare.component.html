@@ -1,0 +1,270 @@
+<div class="unmconf-wrapper">
+
+  <!---UNMCONF LEFT DATA START-->
+
+  <!-- <div class="logo-search">
+                  
+                  
+                </div> -->
+
+
+
+
+  <!---UNMCONF LEFT DATA END-->
+
+  <!---UNMCONF RIGHT DATA START-->
+  <div class="unmconf-right-data" style="width: 100%;">
+    <!--HEADER START-->
+    <div class="unconf-right-header">
+      <div class="logo">
+        <div class="conorlog">
+          <img src="../../../assets/images/logo.png" alt="FiberHome">
+        </div>
+
+        <div class="left-header" style="float: right; margin: 0px 15px;">
+          <h1>Folder Comparison</h1>
+          <div class="breadcrumb">
+            <nz-breadcrumb>
+              <nz-breadcrumb-item>
+                <a [routerLink]="['/configuration-tools']">Home</a>
+              </nz-breadcrumb-item>
+              <nz-breadcrumb-item>
+                <a [routerLink]="['/comparison-tool']">Configuration Comparison</a>
+              </nz-breadcrumb-item>
+              <nz-breadcrumb-item>
+                {{ loadTabContent }}
+              </nz-breadcrumb-item>
+            </nz-breadcrumb>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="right-header">
+        <ul>
+          <li><i nz-icon nzType="user" nzTheme="outline"></i><span>{{ username }}</span></li>
+          <li><a routerLink="/login"><img src="../../../assets/images/logout.png">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--HEADER END-->
+
+    <!--=====PAGEDATA START=====-->
+    <div class="unconf-right-page-data">
+      <!-- <nz-tabset [nzType]="'card'" [nzSelectedIndex]="index">
+                    <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate"> -->
+      <!-- <ng-template #titleTemplate>
+                        <div (click)="switchTab(tab)">{{ tab }}<i nz-icon nzType="close" class="ant-tabs-close-x" (click)="closeTab(tab)"></i></div>
+                      </ng-template> -->
+      <div class="tab-content">
+
+        <div class="action-div">
+          <div class="input-div">
+            <img src="../../../assets/images/icons/result-path.png" width="32" height="32" alt="FiberHome">
+            <nz-form-label>Result Path </nz-form-label>
+            <input nz-input placeholder="Enter path here" [(ngModel)]='resultpath' required>
+            <img src="../../../assets/images/icons/Compare.png" width="32" height="32" alt="FiberHome">
+            <button class="compare" (click)="compare()" [disabled]='comparedisabled'>Compare</button>
+            <img src="../../../assets/images/icons/line.png" height="26" alt="FiberHome" style="margin-top: 5px;">
+
+
+            <img src="../../../assets/images/icons/Stop.png" width="32" height="32" alt="FiberHome">
+            <p class="stop" (click)="stopCompare()">Stop</p>
+            <img src="../../../assets/images/icons/line.png" height="26" alt="FiberHome" style="margin-top: 5px;">
+
+
+            <img src="../../../assets/images/icons/checked-result.png" width="32" height="32" alt="FiberHome">
+            <p class="result" (click)="getResult()">Check result</p>
+            <img src="../../../assets/images/icons/line.png" height="26" alt="FiberHome" style="margin-top: 5px;">
+
+            <nz-form-label>Filter By </nz-form-label>
+            <!-- <input nz-input placeholder="Enter path here"> -->
+            <div class="tagdiv">
+              <nz-tag *ngFor="let tag of tags; let i = index">
+                {{ sliceTagName(tag) }}
+              </nz-tag>
+            </div>
+            <!-- <nz-tag *ngIf="!inputVisible" class="editable-tag" nzNoAnimation (click)="showInput()">
+            <i nz-icon nzType="plus"></i> New Tag
+          </nz-tag>
+          <input
+            #inputElement
+            nz-input
+            nzSize="small"
+            *ngIf="inputVisible"
+            type="text"
+            [(ngModel)]="inputValue"
+            style="width: 78px;"
+            (blur)="handleInputConfirm()"
+            (keydown.enter)="handleInputConfirm()"
+          /> -->
+            <img src="../../../assets/images/icons/Filter.png" width="24" height="25" alt="FiberHome" class="filter"
+              (click)="showModal()">
+
+          </div>
+        </div>
+        <!-- Common Configuration start -->
+        <!-- <app-common-configuration *ngSwitchCase="'Common Configuration'"></app-common-configuration> -->
+        <!-- Common Conguration end -->
+
+
+        <div class="table-div">
+          <table>
+            <tr>
+              <td class="top-media-left">
+                <input nz-input placeholder="Enter path here" [(ngModel)]='sourcepath' ngControl='sourcepath' required>
+              </td>
+              <td class="top-media-right">
+                <input nz-input placeholder="Enter path here" [(ngModel)]='targetpath' required>
+              </td>
+            </tr>
+            <tr style="display: inline-flex; width: 200%;">
+              <td class="second-media-left">
+                <nz-table #expandTable [nzData]="listOfMapData" [nzFrontPagination]="false" [nzShowPagination]="false">
+                  <thead>
+                    <tr>
+                      <th nzWidth="60%">Name</th>
+                      <th nzWidth="20%">Size</th>
+                      <th nzWidth="20%">Modified</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let data of expandTable.data">
+                      <ng-container *ngFor="let item of mapOfExpandedData[data.key]">
+                        <tr *ngIf="(item.parent && item.parent.expand) || !item.parent">
+                          <td [nzIndentSize]="item.level * 20" [nzShowExpand]="!!item.children"
+                            [(nzExpand)]="item.expand"
+                            (nzExpandChange)="collapse(mapOfExpandedData[data.key], item, $event)">
+                            {{ item.name }}
+                          </td>
+                          <td>{{ item.fileSize }}</td>
+                          <td>{{ item.lastModifiedTime }}</td>
+                        </tr>
+                      </ng-container>
+                    </ng-container>
+                  </tbody>
+                </nz-table>
+                <!-- <img src="../../../assets/images/folder-compare.png" alt="FiberHome"> -->
+              </td>
+              <td class="second-media-right">
+                <nz-table #expandTableAfter [nzData]="listOfMapDataAfter" [nzFrontPagination]="false"
+                  [nzShowPagination]="false">
+                  <thead>
+                    <tr>
+                      <th nzWidth="60%">Name</th>
+                      <th nzWidth="20%">Size</th>
+                      <th nzWidth="20%">Modified</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let data of expandTableAfter.data">
+                      <ng-container *ngFor="let item of mapOfExpandedDataAfter[data.key]">
+                        <tr *ngIf="(item.parent && item.parent.expand) || !item.parent">
+                          <td [nzIndentSize]="item.level * 20" [nzShowExpand]="!!item.children"
+                            [(nzExpand)]="item.expand"
+                            (nzExpandChange)="collapse(mapOfExpandedDataAfter[data.key], item, $event)">
+                            {{ item.name }}
+                          </td>
+                          <td>{{ item.fileSize }}</td>
+                          <td>{{ item.lastModifiedTime }}</td>
+                        </tr>
+                      </ng-container>
+                    </ng-container>
+                  </tbody>
+                </nz-table>
+                <!-- <img src="../../../assets/images/folder-compare.png" alt="FiberHome"> -->
+              </td>
+            </tr>
+            <tr>
+              <td class="third-media-left">
+                <p>
+                 <span class="progress-heading">Copy Progress Status :</span>  <span class="progress-status">
+                  Total Copy File: {{ progressStatus?.totalCopyFileCount }} ,
+                  Total Finished Copy File: {{ progressStatus?.finishCopyFileCount }}</span></p>
+                <p><span class="progress-heading"> Compare Progress Status :</span>   <span class="progress-status">
+                    Total Compare File: {{ progressStatus?.totalCompareFileCount }} ,
+                    Total Finished Compare File: {{ progressStatus?.finishCompareFileCount }}</span></p>
+              </td>
+              <td class="third-media-right">
+            <nz-progress [nzPercent]=[copyPerc]></nz-progress>
+            <nz-progress [nzPercent]=[compPerc]></nz-progress>
+              </td>
+
+            </tr>
+            <!-- <tr>
+                    <td class="third-media-left" colspan="2">
+                      <img src="../../../assets/images/icons/left-arrow.png" width="15" height="10" alt="FiberHome">
+                    </td>
+                  </tr> -->
+
+          </table>
+        </div>
+
+      </div>
+      <!-- </nz-tab>
+                  </nz-tabset> -->
+    </div>
+    <!--======PAGEDATA END====-->
+
+  </div>
+  <!---UNMCONF RIGHT DATA END-->
+
+</div>
+<!-- <pre>{{listOfMapData | async}}</pre> -->
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Filter By" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="handleOk()">
+    <nz-form-item *ngFor="let control of listOfControl; let i = index">
+      <nz-form-control [nzXs]="11" [nzSm]="11" nzErrorTip="Please input passenger's name or delete this field.">
+        <nz-input-group nzCompact>
+          <nz-select [attr.id]="control.id" [formControlName]="control.controlInstanceFirst" nzPlaceHolder="Select"
+            class="passenger-input">
+            <nz-option [nzLabel]="'Element'" [nzValue]="'Element'"></nz-option>
+            <nz-option [nzLabel]="'Attribute'" [nzValue]="'Attribute'"></nz-option>
+          </nz-select>
+        </nz-input-group>
+      </nz-form-control>
+      <nz-form-control [nzXs]="11" [nzSm]="11" nzErrorTip="Please input passenger's name or delete this field.">
+        <input class="passenger-input" nz-input placeholder="Attribute" [attr.id]="control.id"
+          [formControlName]="control.controlInstance" />
+        <i nz-icon nzType="minus-circle-o" class="dynamic-delete-button" (click)="removeField(control, $event)"></i>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-control [nzXs]="2" [nzSm]="2" style="position: absolute; z-index: 99; top: 79px; right: 15px;">
+      <i nz-icon nzType="plus-circle-o" class="dynamic-add-button" (click)="addField($event)"></i>
+    </nz-form-control>
+    <nz-form-item>
+    </nz-form-item>
+  </form>
+</nz-modal>
+
+
+<nz-modal [(nzVisible)]="search" nzTitle="Search" (nzOnCancel)="searchCancel()" (nzOnOk)="searchOk()">
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item *ngFor="let control of listOfControl; let i = index">
+      <nz-form-control [nzXs]="12" [nzSm]="12" nzErrorTip="Please input passenger's name or delete this field.">
+        <nz-input-group nzCompact>
+          <nz-select [attr.id]="control.id" [formControlName]="control.controlInstanceFirst" nzPlaceHolder="Select"
+            class="passenger-input">
+            <nz-option [nzLabel]="'Element'" [nzValue]="'Element'"></nz-option>
+            <nz-option [nzLabel]="'Attribute'" [nzValue]="'Attribute'"></nz-option>
+          </nz-select>
+        </nz-input-group>
+      </nz-form-control>
+
+      <nz-form-control [nzXs]="12" [nzSm]="12" nzErrorTip="Please input passenger's name or delete this field.">
+        <input class="passenger-input" nz-input placeholder="Attribute" [attr.id]="control.id"
+          [formControlName]="control.controlInstance" />
+        <i nz-icon nzType="minus-circle-o" class="dynamic-delete-button" (click)="removeField(control, $event)"></i>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button nzType="dashed" class="add-button" (click)="addField($event)">
+          <i nz-icon nzType="plus"></i>
+          Add field
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+
+  </form>
+</nz-modal>

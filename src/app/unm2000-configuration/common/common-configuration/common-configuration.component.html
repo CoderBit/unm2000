@@ -1,0 +1,67 @@
+<section class="unm2000-common-configuration">
+  <form nz-form class="ant-advanced-search-form" #form="ngForm" (submit)="onSubmit(form)">
+    <nz-collapse [nzBordered]="true">
+      <nz-collapse-panel nzHeader="{{translate.instant('Basic Configuration')}}" [nzActive]="true">
+        <nz-spin [nzSpinning]="isSpinning">
+          <div class="nz-collapse-data">
+            <div nz-row [nzGutter]="24">
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('OTN Device Multi-Sub-Shelf Switch')}} </nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}" name="subShelfSwitch"
+                      [(ngModel)]="subShelfSwitch"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Cmd Synchronous Ems Status Switch')}} </nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}" name="emsStatusSwitch"
+                      [(ngModel)]="emsStatusSwitch"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            <!-- </div>
+            <div nz-row [nzGutter]="24"> -->
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('LCT Mode Switch')}} </nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}" name="ctModeSwitch"
+                      [(ngModel)]="ctModeSwitch"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('SNMP SubAgent Switch')}} </nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}" name="snmpAgentSwitch"
+                      [(ngModel)]="snmpAgentSwitch"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            <!-- </div>
+            <div nz-row [nzGutter]="24"> -->
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('HeartBeat Port Switch')}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}" name="heartBeatPortSwitch"
+                      [(ngModel)]="heartBeatPortSwitch"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <div nz-col [nzSpan]="24" class="search-area">
+      <button nz-button [nzType]="'primary'" class="btn-b" [nzLoading]="isLoading">{{translate.instant('Save')}}</button>
+      <button nz-button type="button" [nzType]="'primary'" class="btn-g ml-1" (click)="fetchData()">{{translate.instant('Reload')}}</button>
+    </div>
+  </form>
+</section>

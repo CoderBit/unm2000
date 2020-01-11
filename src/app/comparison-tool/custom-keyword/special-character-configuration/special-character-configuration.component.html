@@ -1,0 +1,49 @@
+<section class="special-character-configuration">
+  <nz-collapse [nzBordered]="true" class="mb-3">
+    <nz-collapse-panel [nzHeader]="'Special Character Configuration'" [nzActive]="true" [nzShowArrow]="false">
+      <div class="nz-collapse-data">
+        <form nz-form>
+          <nz-form-item>
+            <nz-form-control [nzSm]="17" [nzXs]="24" nzErrorTip="">
+              <button nz-button type="button" (click)="uploadFile.click()" class="seletFileBtn"><i nz-icon
+                  nzType="upload"></i><span>Select
+                  File</span></button>
+              <input type="file" id="uploadFile" (change)="handleFileInput($event.target.files)" hidden #uploadFile>
+              <button nz-button [nzType]="'primary'" class="btn-b ml-1" (click)="upload()">Upload</button><br>
+              <span class="filename"><i nz-icon nzType="paper-clip"
+                  nzTheme="outline"></i><span>{{fileName}}</span></span>
+            </nz-form-control>
+          </nz-form-item>
+        </form>
+      </div>
+      <div class="display-file-table">
+        <nz-spin [nzSpinning]="isLoading">
+          <nz-table #rowSelectionTable [nzShowPagination]="false" [nzPageSize]="listOfAllData.length"
+            [nzData]="listOfAllData">
+            <thead>
+              <tr>
+                <th></th>
+                <th>S.No</th>
+                <th>File Name</th>
+                <th>Operation Time</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of rowSelectionTable.data">
+                <td></td>
+                <td>{{ data.serialNumber }}</td>
+                <td>{{ data.fileName }}</td>
+                <td>{{ data.TimeAndDate }}</td>
+                <td>
+                  <button nz-button [nzType]="'primary'" class="btn-r " (click)="delete()">Delete</button>
+                  <button nz-button [nzType]="'primary'" class="btn-b ml-1" (click)="download()">Download</button>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </nz-spin>
+      </div>
+    </nz-collapse-panel>
+  </nz-collapse>
+</section>

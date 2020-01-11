@@ -1,0 +1,109 @@
+<section class="corba-configuation">
+  <form nz-form class="ant-advanced-search-form" [formGroup]="corbacommonForm" (ngSubmit)="submitForm()">
+    <nz-collapse [nzBordered]="true">
+      <nz-collapse-panel nzHeader="{{translate.instant('Basic Configuration')}}" [nzActive]="true">
+        <nz-spin [nzSpinning]="isSpinning">
+          <div class="nz-collapse-data">
+            <div nz-row [nzGutter]="24">
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('HeartBeat Switch')}} </nz-form-label>
+                  <nz-form-control>
+                    <nz-switch formControlName="socket" nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}"
+                      (click)="clickStatus()"></nz-switch>
+                  </nz-form-control>
+                  <nz-form-control *ngIf="switchvalue == true" class="switchstatus" [nzErrorTip]="timeErrorTpl">
+                    <input nz-input style="width: 60px; margin: 0 .5rem;" formControlName="heartbeat_switch" />{{translate.instant('Seconds')}}
+                    <ng-template #timeErrorTpl let-control>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('Time is incorrect!')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('Host IP')}} </nz-form-label>
+                  <nz-form-control nzHasFeedback [nzErrorTip]="ipErrorTpl">
+                    <input nz-input formControlName="host" style="padding-right: 11px;" />
+                    <ng-template #ipErrorTpl let-control>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('IP format is incorrect!')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Port')}} </nz-form-label>
+                  <nz-form-control>
+                    <input nz-input formControlName="port" />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            <!-- </div> -->
+            <!-- <div nz-row [nzGutter]="24"> -->
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('EMS Name')}} </nz-form-label>
+                  <nz-form-control nzErrorTip="Required!">
+                    <input nz-input formControlName="ems_tmf_name" />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('NBI Protocol Version')}}</nz-form-label>
+                  <nz-form-control nzErrorTip="Required!">
+                    <nz-select nzPlaceHolder="Choose" formControlName="nbiprotocolversion">
+                      <nz-option nzValue="0" nzLabel="{{translate.instant('MTNM3.5')}}"></nz-option>
+                      <nz-option nzValue="1" nzLabel="{{translate.instant('CMCC')}}"></nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8" class="ant-more-input">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Project Alarm Filter Switch')}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}"
+                      formControlName="alarm_project_state"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+            <div nz-row [nzGutter]="24">
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Business Type')}}</nz-form-label>
+                  <nz-form-control nzErrorTip="Required!">
+                    <nz-select nzPlaceHolder="Choose" formControlName="bussiness_type">
+                      <nz-option nzValue="0" nzLabel="{{translate.instant('UNM2000 Model')}}"></nz-option>
+                      <nz-option nzValue="1" nzLabel="{{translate.instant('OTNM2000 Model')}}"></nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <div nz-col [nzSpan]="24" class="search-area">
+      <button nz-button [nzType]="'primary'" class="btn-b" [nzLoading]="isLoading">
+          {{translate.instant('Save')}} 
+      </button>
+      <button nz-button [nzType]="'primary'" class="btn-g ml-11" type="button" (click)="fetchData()">
+          {{translate.instant('Reload')}}
+      </button>
+    </div>
+  </form>
+</section>

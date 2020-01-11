@@ -1,0 +1,107 @@
+<section class="i2-configuration">
+  <form nz-form class="ant-advanced-search-form" [formGroup]="i2commonForm" (ngSubmit)="submitForm()">
+    <nz-collapse [nzBordered]="true">
+      <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.title" [nzActive]="panel.active">
+        <nz-spin [nzSpinning]="isSpinning">
+          <div class="nz-collapse-data">
+            <div nz-row [nzGutter]="24">
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('HeartBeat Switch')}} </nz-form-label>
+                  <nz-form-control>
+                    <nz-switch formControlName="socket" nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}"
+                      (click)="clickStatus()"></nz-switch>
+                  </nz-form-control>
+                  <nz-form-control *ngIf="switchvalue == true" class="switchstatus" [nzErrorTip]="timeErrorTpl">
+                    <input nz-input style="width: 60px; margin: 0 .5rem;" formControlName="heartbeat_switch" />{{translate.instant('Seconds')}}
+                    <ng-template #timeErrorTpl let-control>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('Time is incorrect!')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Port')}} </nz-form-label>
+                  <nz-form-control>
+                    <input nz-input placeholder="8086" formControlName="port" />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <!-- </div>
+            <div nz-row [nzGutter]="24"> -->
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('EMS Name')}} </nz-form-label>
+                  <nz-form-control [nzErrorTip]="ems_tmf_nameerror">
+                    <input nz-input placeholder="" formControlName="ems_tmf_name" />
+                    <ng-template #ems_tmf_nameerror let-control>
+                      <ng-container *ngIf="control.hasError('maxlength')">
+                          {{translate.instant('Maximum Length Should be 20')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired> {{translate.instant('Host IP')}} </nz-form-label>
+                  <nz-form-control nzHasFeedback [nzErrorTip]="ipErrorTplHost">
+                    <input nz-input placeholder="0.0.0.0" formControlName="host" style="padding-right: 12px;" />
+                    <ng-template #ipErrorTplHost let-control>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('IP format is incorrect!')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <!-- </div>
+            <div nz-row [nzGutter]="24"> -->
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('ActiveMQ Host IP')}}</nz-form-label>
+                  <nz-form-control nzHasFeedback [nzErrorTip]="ipErrorTplActiveMQ">
+                    <input nz-input formControlName="activemq_host" style="padding-right: 12px;" />
+                    <ng-template #ipErrorTplActiveMQ let-control>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('IP format is incorrect!')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('ActiveMQ Port')}}</nz-form-label>
+                  <nz-form-control>
+                    <input nz-input formControlName="activemq_port" />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <div nz-col [nzSpan]="24" class="search-area">
+      <button nz-button [nzType]="'primary'" class="btn-b" [nzLoading]="isLoading">{{translate.instant('Save')}} </button>
+      <button nz-button [nzType]="'primary'" class="btn-g ml-11" type="button"
+        (click)="fetchI2ConfigureData()">{{translate.instant('Reload')}}</button>
+    </div>
+  </form>
+</section>

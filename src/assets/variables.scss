@@ -1,0 +1,102 @@
+$green1: #00bfa5;
+$green2: #009d8a;
+$green3: #0bb7b4;
+$green4: #0a9e9b;
+$blue1: #40a9ff;
+$blue2: #2196f3;
+$blue3: #0c7bd6;
+$blue4: #0c78d1;
+$blue5: #0a69b8;
+$white: #ffffff;
+$border-c: #0bc2a9;
+$yellow: #ff9900;
+$yellow2: #df8600;
+$red: #ff4d4f;
+$red2: #ec0000;
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.ml-11 {
+  margin-left: 1.5rem;
+}
+
+.tc-b6 {
+  color: #666666 !important;
+}
+
+// @mixin ml-1{
+//   margin-left: 1rem;
+// }
+
+@mixin btn-g {
+  background: $green3;
+  border-color: $green4;
+  &:hover {
+    background: $green4;
+  }
+  &:disabled {
+    background-color: #aaaaaa;
+    border-color: #d9d9d9;
+    color: #d9d9d9;
+  }
+}
+
+@mixin btn-y {
+  background: $yellow;
+  border-color: $yellow;
+  &:hover {
+    background: $yellow2;
+  }
+  &:disabled {
+    background-color: #aaaaaa;
+    border-color: #d9d9d9;
+    color: #d9d9d9;
+  }
+}
+
+@mixin btn-b {
+  background: $blue3;
+  border-color: $blue4;
+  &:hover {
+    background: $blue5;
+  }
+  &:disabled {
+    background-color: #aaaaaa;
+    border-color: #d9d9d9;
+    color: #d9d9d9;
+  }
+}
+// .btn-r {
+//   background: $red;
+//   border-color: $red;
+//   &:hover {
+//     background: $red2;
+//   }
+//   &:disabled {
+//     background-color: #aaaaaa;
+//     border-color: #d9d9d9;
+//   }
+// }
+
+@mixin btn-r {
+  background: $red;
+  border-color: $red;
+  &:hover {
+    background: $red2;
+  }
+  &:disabled {
+    background-color: #aaaaaa;
+    border-color: #d9d9d9;
+    color: #d9d9d9;
+  }
+}
+
+@mixin border-g {
+  border: 1px solid $border-c;
+}

@@ -1,0 +1,162 @@
+.configuration-tool-wrapper {
+  background: url("../../../assets/images/configuration-tools-bg.jpg");
+  background-size: cover;
+  height: 100vh;
+
+  .conf-tool-header {
+    background: linear-gradient(to right, #0BB2BC, #1F98EF);
+    padding: 0.8% 4% 0%;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      // background: #ffffff;
+      // padding: 5px 0px;
+      // border-radius: 10px 10px 0px 0px;
+      // text-align: center;
+      padding: 10px 0px;
+      position: relative;
+      top: -5px;
+
+      img {
+        max-width: 70%;
+      }
+    }
+
+    ul {
+      display: inline-flex;
+      padding: 13px 0px 0px 0px;
+      margin: 0px;
+
+      li {
+        color: #ffffff;
+        font-size: 150%;
+
+        &:first-child {
+          margin-right: 15px;
+
+          .anticon {
+            border: 1px solid #ffffff;
+            border-radius: 100%;
+          }
+        }
+
+        .anticon {
+          margin-right: 5px;
+          font-size: 125%;
+        }
+
+        img {
+          width: 18px;
+          height: 18px;
+          margin-right: 5px;
+          position: relative;
+          top: -2px;
+        }
+
+        a {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .conf-tool-nav {
+    margin-top: 60px;
+    text-align: center;
+
+    h2 {
+      font-size: 280%;
+      font-weight: 600;
+      color: #4E4E4E;
+      margin-bottom: 4rem;
+    }
+
+    ul {
+      display: inline-flex;
+      margin: 0px;
+      padding: 0px;
+
+      li {
+        &:first-child {
+          background: #00BFA5;
+
+          span {
+            background: #4DD2C0;
+          }
+
+          &:hover {
+            background: #2CAD9D;
+          }
+        }
+
+        &:nth-child(2n) {
+          background: #0B71C4;
+          margin: 0px 40px;
+
+          span {
+            background: #64B6F7;
+          }
+
+          &:hover {
+            background: #105099;
+          }
+        }
+
+        &:nth-child(3n) {
+          background: #EC407A;
+
+          span {
+            background: #F1789F;
+          }
+
+          &:hover {
+            background: #E81E60;
+          }
+        }
+
+        &:last-child {
+          background: #fb8c00;
+
+          span {
+            background: #ffa433;
+          }
+
+          &:hover {
+            background: #df7b00;
+          }
+        }
+
+        a {
+          display: block;
+          padding-bottom: 60px;
+
+          span {
+            display: block;
+            border-radius: 20px;
+            color: #ffffff;
+            font-size: 150%;
+            font-weight: 600;
+            line-height: 1.2;
+            padding: 30px 0px;
+
+            span {
+              font-size: 180%;
+              padding: 0px;
+            }
+          }
+
+          img {
+            margin-top: 25px;
+            width: 80px;
+            height: 76px;
+          }
+        }
+
+        border-radius: 20px;
+        width:225px;
+        text-align: center;
+      }
+    }
+  }
+}

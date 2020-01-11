@@ -1,0 +1,63 @@
+<section class="alarm-configuration">
+  <form nz-form class="ant-advanced-search-form" [formGroup]="alarmForm" (ngSubmit)="submitForm()">
+    <nz-collapse [nzBordered]="true">
+      <nz-collapse-panel *ngFor="let panel of panels" nzHeader="{{translate.instant('Basic Configuration')}}" [nzActive]="panel.active">
+        <nz-spin [nzSpinning]="isSpinning">
+          <div class="nz-collapse-data">
+            <div nz-row [nzGutter]="24">
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Alarm Delay Deal Switch')}} </nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}"
+                      formControlName="alarmDelayDealSwitch"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Alarm Automatic Synchronization Switch')}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}"
+                      formControlName="alarmAutomaticSynchronisationSwitch"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+            <div nz-row [nzGutter]="24">
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('Alarm_Automatic_Aynchronization_Interval')}} </nz-form-label>
+                  <nz-form-control [nzErrorTip]="alarmautomError">
+                    <input nz-input style="width: 56px;" formControlName="alarmAutomaticAynchronizationInterval" /> {{translate.instant('Min')}}
+                    <ng-template #alarmautomError let-control>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('Time is incorrect')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>&nbsp;{{translate.instant('Alarm Correlation Analysis Switch')}} </nz-form-label>
+                  <nz-form-control>
+                    &nbsp;<nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}"
+                      formControlName="alarmCorrelationAnalysisSwitch"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <div nz-col [nzSpan]="24" class="search-area">
+      <button nz-button [nzType]="'primary'" class="btn-b" [nzLoading]="isLoading">{{translate.instant('Save')}} </button>
+      <button nz-button type="button" [nzType]="'primary'" class="btn-g ml-1" (click)="fetchAlarmData()">{{translate.instant('Reload')}}</button>
+    </div>
+  </form>
+</section>

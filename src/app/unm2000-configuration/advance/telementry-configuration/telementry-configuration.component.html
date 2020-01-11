@@ -1,0 +1,92 @@
+<section class="telementry-configuration">
+  <form nz-form class="ant-advanced-search-form" [formGroup]="telementryForm" (ngSubmit)="submitForm()">
+    <nz-collapse [nzBordered]="true">
+      <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.title" [nzActive]="panel.active">
+        <nz-spin [nzSpinning]="isSpinning">
+          <div class="nz-collapse-data">
+            <div nz-row [nzGutter]="24">
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('parse_thread_no')}}
+                    <span nz-tooltip nzTitle="Parsing the number of UDP data threads">
+                      <i nz-icon nzType="question" nzTheme="outline"></i>
+                    </span>
+                  </nz-form-label>
+                  <nz-form-control [nzErrorTip]="parseError">
+                    <input nz-input formControlName="parseThread" />
+                    <ng-template #parseError let-control>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('Invalid Input')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('process_thread_no')}}
+                    <span nz-tooltip
+                      nzTitle="{{translate.instant('telementry_porcess_tooltip')}}">
+                      <i nz-icon nzType="question" nzTheme="outline"></i>
+                    </span>
+                  </nz-form-label>
+                  <nz-form-control [nzErrorTip]="processError">
+                    <input nz-input formControlName="processThread" />
+                    <ng-template #processError let-control>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('Invalid Input')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('Pop MultiData Number')}}
+                    <span nz-tooltip nzTitle="{{translate.instant('pop_multidat_tooltip')}}">
+                      <i nz-icon nzType="question" nzTheme="outline"></i>
+                    </span>
+                  </nz-form-label>
+                  <nz-form-control [nzErrorTip]="popMultiError">
+                    <input nz-input formControlName="popMultidata" />
+                    <ng-template #popMultiError let-control>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('Invalid Input')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('telementry_udp_switch')}} </nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}"
+                      formControlName="telemetryUdpSwitch"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+            <div nz-row [nzGutter]="24">
+
+            </div>
+          </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <div nz-col [nzSpan]="24" class="search-area">
+      <button nz-button [nzType]="'primary'" class="btn-b" [nzLoading]="isLoading">{{translate.instant('Save')}}</button>
+      <button nz-button [nzType]="'primary'" class="btn-g ml-11" type="button"
+        (click)="fetchTelementryData()">{{translate.instant('Reload')}}</button>
+    </div>
+  </form>
+</section>

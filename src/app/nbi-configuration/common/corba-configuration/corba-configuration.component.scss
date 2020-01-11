@@ -1,0 +1,70 @@
+@import "../../../../assets/variables.scss";
+
+.btn-g {
+  @include btn-g;
+  width: 126px;
+  height: 39px;
+  background: inherit;
+  background-color: rgba(0, 191, 165, 1);
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 136, 119, 1);
+  border-radius: 7px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color: #FFFFFF;
+}
+
+.btn-b {
+  @include btn-b;
+  width: 108px;
+  height: 39px;
+  background: inherit;
+  background-color: rgba(33, 150, 243, 1);
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(12, 120, 209, 1);
+  border-radius: 7px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color: #FFFFFF;
+}
+
+.switchstatus {
+  display: contents;
+}
+
+// nz-select {
+//   margin-right: 0px;
+//   width: 195px;
+// }
+
+nz-select {
+  width: 200px;
+}
+
+input {
+  width: 200px;
+}
+
+@media only screen and (max-width: 1400px) {
+  nz-select {
+    width: 200px;
+  }
+  
+  input {
+    width: 200px;
+  }
+}

@@ -1,0 +1,72 @@
+<section class="unm2000-performance-configuration">
+	<form nz-form class="ant-advanced-search-form" [formGroup]="performanceForm" (ngSubmit)="submitForm()">
+		<nz-collapse [nzBordered]="true">
+			<nz-collapse-panel *ngFor="let panel of panels" nzHeader="{{translate.instant('Basic Configuration')}}" [nzActive]="panel.active">
+				<nz-spin [nzSpinning]="isSpinning">
+				<div class="nz-collapse-data">
+					<div nz-row [nzGutter]="24">
+						<div nz-col [nzXl]="12" [nzXXl]="8">
+							<nz-form-item nzFlex>
+								<nz-form-label>{{translate.instant('Performance Simulation Test Switch')}} </nz-form-label>
+								<nz-form-control>
+									<nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}"
+										formControlName="performanceSimulationTestSwitch">
+									</nz-switch>
+								</nz-form-control>
+							</nz-form-item>
+						</div>
+						<div nz-col [nzXl]="12" [nzXXl]="8">
+							<nz-form-item nzFlex>
+								<nz-form-label>{{translate.instant('FTP Collect Onu Port Pm')}} </nz-form-label>
+								<nz-form-control nzErrorTip="Required!">
+									<nz-select formControlName="ftpCollectionOnuPortPm" nzPlaceHolder="Choose">
+										<nz-option nzValue="true" nzLabel="{{translate.instant('True')}}"></nz-option>
+										<nz-option nzValue="false" nzLabel="{{translate.instant('False')}}"></nz-option>
+									</nz-select>
+								</nz-form-control>
+							</nz-form-item>
+						</div>
+					</div>
+					<div nz-row [nzGutter]="24">
+						<div nz-col [nzXl]="12" [nzXXl]="8">
+							<nz-form-item nzFlex>
+								<nz-form-label> {{translate.instant('FTP Collect Olt Pm')}} </nz-form-label>
+								<nz-form-control nzErrorTip="Required!">
+									<nz-select formControlName="ftpcollectOltPm" nzPlaceHolder="Choose">
+										<nz-option nzValue="true" nzLabel="{{translate.instant('True')}}"></nz-option>
+										<nz-option nzValue="false" nzLabel="{{translate.instant('False')}}"></nz-option>
+									</nz-select>
+								</nz-form-control>
+							</nz-form-item>
+						</div>
+						<div nz-col [nzXl]="12" [nzXXl]="8">
+							<nz-form-item nzFlex>
+								<nz-form-label>{{translate.instant('Export Save Max. No. Of Days')}} </nz-form-label>
+								<nz-form-control nzHasFeedback [nzErrorTip]="exportSaveNo">
+									<input #inputElement nzOverlayClassName="numeric-input" nz-input formControlName="exportSaveMaxNoOFDays" placeholder="{{translate.instant('Input a number')}}"
+									(ngModelChange)="onChange($event)"
+									(blur)="onBlur()" maxlength="1"  style="padding-right: 13px;"/>
+									<ng-template #exportSaveNo let-control>
+										<ng-container *ngIf="control.hasError('required')">
+												{{translate.instant('Required!')}}
+										</ng-container>
+										<ng-container *ngIf="control.hasError('pattern')">
+												{{translate.instant('Please input days should be 1-7')}}
+										</ng-container>
+									</ng-template>
+								</nz-form-control>
+							</nz-form-item>
+						</div>
+					</div>
+				</div>
+       </nz-spin>
+			</nz-collapse-panel>
+		</nz-collapse>
+		<div nz-col [nzSpan]="24" class="search-area">
+			<button nz-button [nzType]="'primary'" class="btn-b" [nzLoading]="isLoading">{{translate.instant('Save')}} </button>
+			<button nz-button type="button" [nzType]="'primary'" class="btn-g ml-1"
+				(click)="fetchPerformanceData()">{{translate.instant('Reload')}}</button>
+		</div>
+	</form>
+
+</section>

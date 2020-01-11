@@ -1,0 +1,42 @@
+@import '../../../../assets/variables.scss';
+
+.btn-g {
+  @include btn-g;
+  width: 126px;
+  height: 39px;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 7px;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color: #FFFFFF;
+}
+
+.btn-b {
+  @include btn-b;
+  width: 126px;
+  height: 39px;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 7px;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color: #FFFFFF;
+}
+
+nz-select {
+  margin-right: 0px;
+  width: 100px;
+}

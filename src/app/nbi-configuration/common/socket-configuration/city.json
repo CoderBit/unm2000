@@ -1,0 +1,1914 @@
+[
+	{
+		"value": "QG",
+		"label": "全国",
+		"children": [
+			{
+				"value": "QG/1000",
+				"label": "全国",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "BJ",
+		"label": "北京",
+		"children": [
+			{
+				"value": "BJ/1101",
+				"label": "市辖区",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "TJ",
+		"label": "天津",
+		"children": [
+			{
+				"value": "TJ/1201",
+				"label": "市辖区",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "HE",
+		"label": "河北",
+		"children": [
+			{
+				"value": "SJZ/1301",
+				"label": "石家庄市",
+				"isLeaf": true
+			},
+			{
+				"value": "TS/1302",
+				"label": "唐山市",
+				"isLeaf": true
+			},
+			{
+				"value": "QHD/1303",
+				"label": "秦皇岛市",
+				"isLeaf": true
+			},
+			{
+				"value": "HD/1304",
+				"label": "邯郸市",
+				"isLeaf": true
+			},
+			{
+				"value": "XT/1305",
+				"label": "邢台市",
+				"isLeaf": true
+			},
+			{
+				"value": "BD/1306",
+				"label": "保定市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZJK/1307",
+				"label": "张家口市",
+				"isLeaf": true
+			},
+			{
+				"value": "CD/1308",
+				"label": "承德市",
+				"isLeaf": true
+			},
+			{
+				"value": "CZ/1309",
+				"label": "沧州市",
+				"isLeaf": true
+			},
+			{
+				"value": "LF/1310",
+				"label": "廊坊市",
+				"isLeaf": true
+			},
+			{
+				"value": "HS/1311",
+				"label": "衡水市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "SX",
+		"label": "山西",
+		"children": [
+			{
+				"value": "TY/1401",
+				"label": "太原市",
+				"isLeaf": true
+			},
+			{
+				"value": "DT/1402",
+				"label": "大同市",
+				"isLeaf": true
+			},
+			{
+				"value": "YQ/1403",
+				"label": "阳泉市",
+				"isLeaf": true
+			},
+			{
+				"value": "CZ/1404",
+				"label": "长治市",
+				"isLeaf": true
+			},
+			{
+				"value": "JC/1405",
+				"label": "晋城市",
+				"isLeaf": true
+			},
+			{
+				"value": "SZ/1406",
+				"label": "朔州市",
+				"isLeaf": true
+			},
+			{
+				"value": "JZ/1407",
+				"label": "晋中市",
+				"isLeaf": true
+			},
+			{
+				"value": "YC/1408",
+				"label": "运城市",
+				"isLeaf": true
+			},
+			{
+				"value": "YZ/1409",
+				"label": "忻州市",
+				"isLeaf": true
+			},
+			{
+				"value": "LF/1410",
+				"label": "临汾市",
+				"isLeaf": true
+			},
+			{
+				"value": "LL/1411",
+				"label": "吕梁市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "NM",
+		"label": "内蒙古",
+		"children": [
+			{
+				"value": "HHHT/1501",
+				"label": "呼和浩特市",
+				"isLeaf": true
+			},
+			{
+				"value": "BT/1502",
+				"label": "包头市",
+				"isLeaf": true
+			},
+			{
+				"value": "WH/1503",
+				"label": "乌海市",
+				"isLeaf": true
+			},
+			{
+				"value": "CF/1504",
+				"label": "赤峰市",
+				"isLeaf": true
+			},
+			{
+				"value": "TL/1505",
+				"label": "通辽市",
+				"isLeaf": true
+			},
+			{
+				"value": "EEDS/1506",
+				"label": "鄂尔多斯市",
+				"isLeaf": true
+			},
+			{
+				"value": "HLBE/1507",
+				"label": "呼伦贝尔市",
+				"isLeaf": true
+			},
+			{
+				"value": "BYZE/1508",
+				"label": "巴彦淖尔市",
+				"isLeaf": true
+			},
+			{
+				"value": "WLCB/1509",
+				"label": "乌兰察布市",
+				"isLeaf": true
+			},
+			{
+				"value": "XA/1522",
+				"label": "兴安盟",
+				"isLeaf": true
+			},
+			{
+				"value": "XLGL/1525",
+				"label": "锡林郭勒盟",
+				"isLeaf": true
+			},
+			{
+				"value": "ALS/1529",
+				"label": "阿拉善盟",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "LN",
+		"label": "辽宁",
+		"children": [
+			{
+				"value": "SY/2101",
+				"label": "沈阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "DL/2102",
+				"label": "大连市",
+				"isLeaf": true
+			},
+			{
+				"value": "AS/2103",
+				"label": "鞍山市",
+				"isLeaf": true
+			},
+			{
+				"value": "FS/2104",
+				"label": "抚顺市",
+				"isLeaf": true
+			},
+			{
+				"value": "BX/2105",
+				"label": "本溪市",
+				"isLeaf": true
+			},
+			{
+				"value": "DD/2106",
+				"label": "丹东市",
+				"isLeaf": true
+			},
+			{
+				"value": "JZ/2107",
+				"label": "锦州市",
+				"isLeaf": true
+			},
+			{
+				"value": "YK/2108",
+				"label": "营口市",
+				"isLeaf": true
+			},
+			{
+				"value": "FX/2109",
+				"label": "阜新市",
+				"isLeaf": true
+			},
+			{
+				"value": "LY/2110",
+				"label": "辽阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "PJ/2111",
+				"label": "盘锦市",
+				"isLeaf": true
+			},
+			{
+				"value": "TL/2112",
+				"label": "铁岭市",
+				"isLeaf": true
+			},
+			{
+				"value": "CY/2113",
+				"label": "朝阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "HLD/2114",
+				"label": "葫芦岛市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "JL",
+		"label": "吉林",
+		"children": [
+			{
+				"value": "CC/2201",
+				"label": "长春市",
+				"isLeaf": true
+			},
+			{
+				"value": "JL/2202",
+				"label": "吉林市",
+				"isLeaf": true
+			},
+			{
+				"value": "SP/2203",
+				"label": "四平市",
+				"isLeaf": true
+			},
+			{
+				"value": "LY/2204",
+				"label": "辽源市",
+				"isLeaf": true
+			},
+			{
+				"value": "TH/2205",
+				"label": "通化市",
+				"isLeaf": true
+			},
+			{
+				"value": "BS/2206",
+				"label": "白山市",
+				"isLeaf": true
+			},
+			{
+				"value": "SY/2207",
+				"label": "松原市",
+				"isLeaf": true
+			},
+			{
+				"value": "BC/2208",
+				"label": "白城市",
+				"isLeaf": true
+			},
+			{
+				"value": "YB/2224",
+				"label": "延边朝鲜族自治州",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "HL",
+		"label": "黑龙江",
+		"children": [
+			{
+				"value": "HEB/2301",
+				"label": "哈尔滨市",
+				"isLeaf": true
+			},
+			{
+				"value": "QQHE/2302",
+				"label": "齐齐哈尔市",
+				"isLeaf": true
+			},
+			{
+				"value": "JX/2303",
+				"label": "鸡西市",
+				"isLeaf": true
+			},
+			{
+				"value": "HG/2304",
+				"label": "鹤岗市",
+				"isLeaf": true
+			},
+			{
+				"value": "SYS/2305",
+				"label": "双鸭山市",
+				"isLeaf": true
+			},
+			{
+				"value": "DQ/2306",
+				"label": "大庆市",
+				"isLeaf": true
+			},
+			{
+				"value": "YC/2307",
+				"label": "伊春市",
+				"isLeaf": true
+			},
+			{
+				"value": "JMS/2308",
+				"label": "佳木斯市",
+				"isLeaf": true
+			},
+			{
+				"value": "QTH/2309",
+				"label": "七台河市",
+				"isLeaf": true
+			},
+			{
+				"value": "MDJ/2310",
+				"label": "牡丹江市",
+				"isLeaf": true
+			},
+			{
+				"value": "HH/2311",
+				"label": "黑河市",
+				"isLeaf": true
+			},
+			{
+				"value": "SH/2312",
+				"label": "绥化市",
+				"isLeaf": true
+			},
+			{
+				"value": "DXAL/2327",
+				"label": "大兴安岭地区",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "SH",
+		"label": "上海",
+		"children": [
+			{
+				"value": "SH/3101",
+				"label": "市辖区",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "JS",
+		"label": "江苏",
+		"children": [
+			{
+				"value": "NJ/3201",
+				"label": "南京市",
+				"isLeaf": true
+			},
+			{
+				"value": "WX/3202",
+				"label": "无锡市",
+				"isLeaf": true
+			},
+			{
+				"value": "XZ/3203",
+				"label": "徐州市",
+				"isLeaf": true
+			},
+			{
+				"value": "CZ/3204",
+				"label": "常州市",
+				"isLeaf": true
+			},
+			{
+				"value": "SZ/3205",
+				"label": "苏州市",
+				"isLeaf": true
+			},
+			{
+				"value": "NT/3206",
+				"label": "南通市",
+				"isLeaf": true
+			},
+			{
+				"value": "LYG/3207",
+				"label": "连云港市",
+				"isLeaf": true
+			},
+			{
+				"value": "HA/3208",
+				"label": "淮安市",
+				"isLeaf": true
+			},
+			{
+				"value": "YC/3209",
+				"label": "盐城市",
+				"isLeaf": true
+			},
+			{
+				"value": "YZ/3210",
+				"label": "扬州市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZJ/3211",
+				"label": "镇江市",
+				"isLeaf": true
+			},
+			{
+				"value": "TZ/3212",
+				"label": "泰州市",
+				"isLeaf": true
+			},
+			{
+				"value": "SQ/3213",
+				"label": "宿迁市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "ZJ",
+		"label": "浙江",
+		"children": [
+			{
+				"value": "HZ/3301",
+				"label": "杭州市",
+				"isLeaf": true
+			},
+			{
+				"value": "NB/3302",
+				"label": "宁波市",
+				"isLeaf": true
+			},
+			{
+				"value": "WZ/3303",
+				"label": "温州市",
+				"isLeaf": true
+			},
+			{
+				"value": "JX/3304",
+				"label": "嘉兴市",
+				"isLeaf": true
+			},
+			{
+				"value": "HU/3305",
+				"label": "湖州市",
+				"isLeaf": true
+			},
+			{
+				"value": "SX/3306",
+				"label": "绍兴市",
+				"isLeaf": true
+			},
+			{
+				"value": "JH/3307",
+				"label": "金华市",
+				"isLeaf": true
+			},
+			{
+				"value": "QZ/3308",
+				"label": "衢州市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZS/3309",
+				"label": "舟山市",
+				"isLeaf": true
+			},
+			{
+				"value": "TZ/3310",
+				"label": "台州市",
+				"isLeaf": true
+			},
+			{
+				"value": "LS/3311",
+				"label": "丽水市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "AH",
+		"label": "安徽",
+		"children": [
+			{
+				"value": "HF/3401",
+				"label": "合肥市",
+				"isLeaf": true
+			},
+			{
+				"value": "WH/3402",
+				"label": "芜湖市",
+				"isLeaf": true
+			},
+			{
+				"value": "BB/3403",
+				"label": "蚌埠市",
+				"isLeaf": true
+			},
+			{
+				"value": "HN/3404",
+				"label": "淮南市",
+				"isLeaf": true
+			},
+			{
+				"value": "MAS/3405",
+				"label": "马鞍山市",
+				"isLeaf": true
+			},
+			{
+				"value": "HB/3406",
+				"label": "淮北市",
+				"isLeaf": true
+			},
+			{
+				"value": "TL/3407",
+				"label": "铜陵市",
+				"isLeaf": true
+			},
+			{
+				"value": "AQ/3408",
+				"label": "安庆市",
+				"isLeaf": true
+			},
+			{
+				"value": "HS/3410",
+				"label": "黄山市",
+				"isLeaf": true
+			},
+			{
+				"value": "CZ/3411",
+				"label": "滁州市",
+				"isLeaf": true
+			},
+			{
+				"value": "FY/3412",
+				"label": "阜阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "SZ/3413",
+				"label": "宿州市",
+				"isLeaf": true
+			},
+			{
+				"value": "LA/3415",
+				"label": "六安市",
+				"isLeaf": true
+			},
+			{
+				"value": "HZ/3416",
+				"label": "亳州市",
+				"isLeaf": true
+			},
+			{
+				"value": "CI/3417",
+				"label": "池州市",
+				"isLeaf": true
+			},
+			{
+				"value": "YC/3418",
+				"label": "宣城市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "FJ",
+		"label": "福建",
+		"children": [
+			{
+				"value": "FZ/3501",
+				"label": "福州市",
+				"isLeaf": true
+			},
+			{
+				"value": "XM/3502",
+				"label": "厦门市",
+				"isLeaf": true
+			},
+			{
+				"value": "PT/3503",
+				"label": "莆田市",
+				"isLeaf": true
+			},
+			{
+				"value": "SM/3504",
+				"label": "三明市",
+				"isLeaf": true
+			},
+			{
+				"value": "QZ/3505",
+				"label": "泉州市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZZ/3506",
+				"label": "漳州市",
+				"isLeaf": true
+			},
+			{
+				"value": "NP/3507",
+				"label": "南平市",
+				"isLeaf": true
+			},
+			{
+				"value": "LY/3508",
+				"label": "龙岩市",
+				"isLeaf": true
+			},
+			{
+				"value": "ND/3509",
+				"label": "宁德市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "JX",
+		"label": "江西",
+		"children": [
+			{
+				"value": "NC/3601",
+				"label": "南昌市",
+				"isLeaf": true
+			},
+			{
+				"value": "JDZ/3602",
+				"label": "景德镇市",
+				"isLeaf": true
+			},
+			{
+				"value": "PX/3603",
+				"label": "萍乡市",
+				"isLeaf": true
+			},
+			{
+				"value": "JJ/3604",
+				"label": "九江市",
+				"isLeaf": true
+			},
+			{
+				"value": "XY/3605",
+				"label": "新余市",
+				"isLeaf": true
+			},
+			{
+				"value": "YT/3606",
+				"label": "鹰潭市",
+				"isLeaf": true
+			},
+			{
+				"value": "GZ/3607",
+				"label": "赣州市",
+				"isLeaf": true
+			},
+			{
+				"value": "JA/3608",
+				"label": "吉安市",
+				"isLeaf": true
+			},
+			{
+				"value": "YC/3609",
+				"label": "宜春市",
+				"isLeaf": true
+			},
+			{
+				"value": "FZ/3610",
+				"label": "抚州市",
+				"isLeaf": true
+			},
+			{
+				"value": "SR/3611",
+				"label": "上饶市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "SD",
+		"label": "山东",
+		"children": [
+			{
+				"value": "JN/3701",
+				"label": "济南市",
+				"isLeaf": true
+			},
+			{
+				"value": "QD/3702",
+				"label": "青岛市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZB/3703",
+				"label": "淄博市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZZ/3704",
+				"label": "枣庄市",
+				"isLeaf": true
+			},
+			{
+				"value": "DY/3705",
+				"label": "东营市",
+				"isLeaf": true
+			},
+			{
+				"value": "YT/3706",
+				"label": "烟台市",
+				"isLeaf": true
+			},
+			{
+				"value": "WF/3707",
+				"label": "潍坊市",
+				"isLeaf": true
+			},
+			{
+				"value": "JI/3708",
+				"label": "济宁市",
+				"isLeaf": true
+			},
+			{
+				"value": "TA/3709",
+				"label": "泰安市",
+				"isLeaf": true
+			},
+			{
+				"value": "WH/3710",
+				"label": "威海市",
+				"isLeaf": true
+			},
+			{
+				"value": "RZ/3711",
+				"label": "日照市",
+				"isLeaf": true
+			},
+			{
+				"value": "LW/3712",
+				"label": "莱芜市",
+				"isLeaf": true
+			},
+			{
+				"value": "LY/3713",
+				"label": "临沂市",
+				"isLeaf": true
+			},
+			{
+				"value": "DZ/3714",
+				"label": "德州市",
+				"isLeaf": true
+			},
+			{
+				"value": "LC/3715",
+				"label": "聊城市",
+				"isLeaf": true
+			},
+			{
+				"value": "BZ/3716",
+				"label": "滨州市",
+				"isLeaf": true
+			},
+			{
+				"value": "HZ/3717",
+				"label": "菏泽市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "HA",
+		"label": "河南",
+		"children": [
+			{
+				"value": "ZZ/4101",
+				"label": "郑州市",
+				"isLeaf": true
+			},
+			{
+				"value": "KF/4102",
+				"label": "开封市",
+				"isLeaf": true
+			},
+			{
+				"value": "LY/4103",
+				"label": "洛阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "PDS/4104",
+				"label": "平顶山市",
+				"isLeaf": true
+			},
+			{
+				"value": "AY/4105",
+				"label": "安阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "HB/4106",
+				"label": "鹤壁市",
+				"isLeaf": true
+			},
+			{
+				"value": "XX/4107",
+				"label": "新乡市",
+				"isLeaf": true
+			},
+			{
+				"value": "JZ/4108",
+				"label": "焦作市",
+				"isLeaf": true
+			},
+			{
+				"value": "PY/4109",
+				"label": "濮阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "XC/4110",
+				"label": "许昌市",
+				"isLeaf": true
+			},
+			{
+				"value": "LH/4111",
+				"label": "漯河市",
+				"isLeaf": true
+			},
+			{
+				"value": "SMX/4112",
+				"label": "三门峡市",
+				"isLeaf": true
+			},
+			{
+				"value": "NY/4113",
+				"label": "南阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "SQ/4114",
+				"label": "商丘市",
+				"isLeaf": true
+			},
+			{
+				"value": "XY/4115",
+				"label": "信阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZK/4116",
+				"label": "周口市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZMD/4117",
+				"label": "驻马店市",
+				"isLeaf": true
+			},
+			{
+				"value": "SZX/4190",
+				"label": "省直辖县级行政区划",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "HB",
+		"label": "湖北",
+		"children": [
+			{
+				"value": "WH/4201",
+				"label": "武汉市",
+				"isLeaf": true
+			},
+			{
+				"value": "HS/4202",
+				"label": "黄石市",
+				"isLeaf": true
+			},
+			{
+				"value": "SY/4203",
+				"label": "十堰市",
+				"isLeaf": true
+			},
+			{
+				"value": "YC/4205",
+				"label": "宜昌市",
+				"isLeaf": true
+			},
+			{
+				"value": "XY/4206",
+				"label": "襄阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "EZ/4207",
+				"label": "鄂州市",
+				"isLeaf": true
+			},
+			{
+				"value": "JM/4208",
+				"label": "荆门市",
+				"isLeaf": true
+			},
+			{
+				"value": "XG/4209",
+				"label": "孝感市",
+				"isLeaf": true
+			},
+			{
+				"value": "JZ/4210",
+				"label": "荆州市",
+				"isLeaf": true
+			},
+			{
+				"value": "HG/4211",
+				"label": "黄冈市",
+				"isLeaf": true
+			},
+			{
+				"value": "XN/4212",
+				"label": "咸宁市",
+				"isLeaf": true
+			},
+			{
+				"value": "SZ/4213",
+				"label": "随州市",
+				"isLeaf": true
+			},
+			{
+				"value": "ES/4228",
+				"label": "恩施土家族苗族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "SZX/4190",
+				"label": "省直辖县级行政区划",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "HN",
+		"label": "湖南",
+		"children": [
+			{
+				"value": "CS/4301",
+				"label": "长沙市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZZ/4302",
+				"label": "株洲市",
+				"isLeaf": true
+			},
+			{
+				"value": "XT/4303",
+				"label": "湘潭市",
+				"isLeaf": true
+			},
+			{
+				"value": "HY/4304",
+				"label": "衡阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "SY/4305",
+				"label": "邵阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "YY/4306",
+				"label": "岳阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "CD/4307",
+				"label": "常德市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZJJ/4308",
+				"label": "张家界市",
+				"isLeaf": true
+			},
+			{
+				"value": "YY/4309",
+				"label": "益阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "CZ/4310",
+				"label": "郴州市",
+				"isLeaf": true
+			},
+			{
+				"value": "YZ/4311",
+				"label": "永州市",
+				"isLeaf": true
+			},
+			{
+				"value": "HH/4312",
+				"label": "怀化市",
+				"isLeaf": true
+			},
+			{
+				"value": "LD/4313",
+				"label": "娄底市",
+				"isLeaf": true
+			},
+			{
+				"value": "XX/4331",
+				"label": "湘西土家族苗族自治州",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "GD",
+		"label": "广东",
+		"children": [
+			{
+				"value": "GZ/4401",
+				"label": "广州市",
+				"isLeaf": true
+			},
+			{
+				"value": "SG/4402",
+				"label": "韶关市",
+				"isLeaf": true
+			},
+			{
+				"value": "SZ/4403",
+				"label": "深圳市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZH/4404",
+				"label": "珠海市",
+				"isLeaf": true
+			},
+			{
+				"value": "ST/4405",
+				"label": "汕头市",
+				"isLeaf": true
+			},
+			{
+				"value": "FS/4406",
+				"label": "佛山市",
+				"isLeaf": true
+			},
+			{
+				"value": "JM/4407",
+				"label": "江门市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZJ/4408",
+				"label": "湛江市",
+				"isLeaf": true
+			},
+			{
+				"value": "MM/4409",
+				"label": "茂名市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZQ/4412",
+				"label": "肇庆市",
+				"isLeaf": true
+			},
+			{
+				"value": "HZ/4413",
+				"label": "惠州市",
+				"isLeaf": true
+			},
+			{
+				"value": "MZ/4414",
+				"label": "梅州市",
+				"isLeaf": true
+			},
+			{
+				"value": "SW/4415",
+				"label": "汕尾市",
+				"isLeaf": true
+			},
+			{
+				"value": "HY/4416",
+				"label": "河源市",
+				"isLeaf": true
+			},
+			{
+				"value": "YJ/4417",
+				"label": "阳江市",
+				"isLeaf": true
+			},
+			{
+				"value": "QY/4418",
+				"label": "清远市",
+				"isLeaf": true
+			},
+			{
+				"value": "DG/4419",
+				"label": "东莞市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZSH/4420",
+				"label": "中山市",
+				"isLeaf": true
+			},
+			{
+				"value": "CZ/4451",
+				"label": "潮州市",
+				"isLeaf": true
+			},
+			{
+				"value": "JY/4452",
+				"label": "揭阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "YF/4453",
+				"label": "云浮市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "GX",
+		"label": "广西",
+		"children": [
+			{
+				"value": "NN/4501",
+				"label": "南宁市",
+				"isLeaf": true
+			},
+			{
+				"value": "LZ/4502",
+				"label": "柳州市",
+				"isLeaf": true
+			},
+			{
+				"value": "GL/4503",
+				"label": "桂林市",
+				"isLeaf": true
+			},
+			{
+				"value": "WZ/4504",
+				"label": "梧州市",
+				"isLeaf": true
+			},
+			{
+				"value": "BH/4505",
+				"label": "北海市",
+				"isLeaf": true
+			},
+			{
+				"value": "FCG/4506",
+				"label": "防城港市",
+				"isLeaf": true
+			},
+			{
+				"value": "QZ/4507",
+				"label": "钦州市",
+				"isLeaf": true
+			},
+			{
+				"value": "GG/4508",
+				"label": "贵港市",
+				"isLeaf": true
+			},
+			{
+				"value": "YL/4509",
+				"label": "玉林市",
+				"isLeaf": true
+			},
+			{
+				"value": "BS/4510",
+				"label": "百色市",
+				"isLeaf": true
+			},
+			{
+				"value": "HZ/4511",
+				"label": "贺州市",
+				"isLeaf": true
+			},
+			{
+				"value": "HC/4512",
+				"label": "河池市",
+				"isLeaf": true
+			},
+			{
+				"value": "LB/4513",
+				"label": "来宾市",
+				"isLeaf": true
+			},
+			{
+				"value": "CZ/4514",
+				"label": "崇左市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "HI",
+		"label": "海南",
+		"children": [
+			{
+				"value": "HK/4601",
+				"label": "海口市",
+				"isLeaf": true
+			},
+			{
+				"value": "SY/4602",
+				"label": "三亚市",
+				"isLeaf": true
+			},
+			{
+				"value": "SZX/4190",
+				"label": "省直辖县级行政区划",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "CQ",
+		"label": "重庆",
+		"children": [
+			{
+				"value": "CQ/1101",
+				"label": "市辖区",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "SC",
+		"label": "四川",
+		"children": [
+			{
+				"value": "CD/5101",
+				"label": "成都市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZG/5103",
+				"label": "自贡市",
+				"isLeaf": true
+			},
+			{
+				"value": "PZH/5104",
+				"label": "攀枝花市",
+				"isLeaf": true
+			},
+			{
+				"value": "LZ/5105",
+				"label": "泸州市",
+				"isLeaf": true
+			},
+			{
+				"value": "DY/5106",
+				"label": "德阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "MY/5107",
+				"label": "绵阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "GY/5108",
+				"label": "广元市",
+				"isLeaf": true
+			},
+			{
+				"value": "SN/5109",
+				"label": "遂宁市",
+				"isLeaf": true
+			},
+			{
+				"value": "NJ/5110",
+				"label": "内江市",
+				"isLeaf": true
+			},
+			{
+				"value": "LS/5111",
+				"label": "乐山市",
+				"isLeaf": true
+			},
+			{
+				"value": "NC/5113",
+				"label": "南充市",
+				"isLeaf": true
+			},
+			{
+				"value": "MS/5114",
+				"label": "眉山市",
+				"isLeaf": true
+			},
+			{
+				"value": "YB/5115",
+				"label": "宜宾市",
+				"isLeaf": true
+			},
+			{
+				"value": "GA/5116",
+				"label": "广安市",
+				"isLeaf": true
+			},
+			{
+				"value": "DZ/5117",
+				"label": "达州市",
+				"isLeaf": true
+			},
+			{
+				"value": "YA/5118",
+				"label": "雅安市",
+				"isLeaf": true
+			},
+			{
+				"value": "BZ/5119",
+				"label": "巴中市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZY/5120",
+				"label": "资阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "AB/5132",
+				"label": "阿坝藏族羌族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "GZ/5133",
+				"label": "甘孜藏族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "LI/5134",
+				"label": "凉山彝族自治州",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "GZ",
+		"label": "贵州",
+		"children": [
+			{
+				"value": "GY/5201",
+				"label": "贵阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "LPS/5202",
+				"label": "六盘水市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZY/5203",
+				"label": "遵义市",
+				"isLeaf": true
+			},
+			{
+				"value": "AS/5204",
+				"label": "安顺市",
+				"isLeaf": true
+			},
+			{
+				"value": "BJ/5205",
+				"label": "毕节市",
+				"isLeaf": true
+			},
+			{
+				"value": "TR/5206",
+				"label": "铜仁市",
+				"isLeaf": true
+			},
+			{
+				"value": "QXN/5223",
+				"label": "黔西南布依族苗族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "QDN/5226",
+				"label": "黔东南苗族侗族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "QN/5227",
+				"label": "黔南布依族苗族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "GAXQ/5231",
+				"label": "贵安新区",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "YN",
+		"label": "云南",
+		"children": [
+			{
+				"value": "KM/5301",
+				"label": "昆明市",
+				"isLeaf": true
+			},
+			{
+				"value": "QJ/5303",
+				"label": "曲靖市",
+				"isLeaf": true
+			},
+			{
+				"value": "YX/5304",
+				"label": "玉溪市",
+				"isLeaf": true
+			},
+			{
+				"value": "BS/5305",
+				"label": "保山市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZT/5306",
+				"label": "昭通市",
+				"isLeaf": true
+			},
+			{
+				"value": "LJ/5307",
+				"label": "丽江市",
+				"isLeaf": true
+			},
+			{
+				"value": "PE/5308",
+				"label": "普洱市",
+				"isLeaf": true
+			},
+			{
+				"value": "LC/5309",
+				"label": "临沧市",
+				"isLeaf": true
+			},
+			{
+				"value": "CX/5323",
+				"label": "楚雄彝族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "HH/5325",
+				"label": "红河哈尼族彝族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "WS/5326",
+				"label": "文山壮族苗族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "XSBN/5328",
+				"label": "西双版纳傣族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "DL/5329",
+				"label": "大理白族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "DH/5331",
+				"label": "德宏傣族景颇族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "NJ/5333",
+				"label": "怒江傈僳族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "DQ/5334",
+				"label": "迪庆藏族自治州",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "XZ",
+		"label": "西藏",
+		"children": [
+			{
+				"value": "LS/5401",
+				"label": "拉萨市",
+				"isLeaf": true
+			},
+			{
+				"value": "RKZ/5402",
+				"label": "日喀则市",
+				"isLeaf": true
+			},
+			{
+				"value": "CD/5421",
+				"label": "昌都地区",
+				"isLeaf": true
+			},
+			{
+				"value": "SN/5422",
+				"label": "山南地区",
+				"isLeaf": true
+			},
+			{
+				"value": "NQ/5424",
+				"label": "那曲地区",
+				"isLeaf": true
+			},
+			{
+				"value": "AL/5425",
+				"label": "阿里地区",
+				"isLeaf": true
+			},
+			{
+				"value": "LZ/5426",
+				"label": "林芝地区",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "SN",
+		"label": "陕西",
+		"children": [
+			{
+				"value": "XA/6101",
+				"label": "西安市",
+				"isLeaf": true
+			},
+			{
+				"value": "TC/6102",
+				"label": "铜川市",
+				"isLeaf": true
+			},
+			{
+				"value": "BJ/6103",
+				"label": "宝鸡市",
+				"isLeaf": true
+			},
+			{
+				"value": "XY/6104",
+				"label": "咸阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "WN/6105",
+				"label": "渭南市",
+				"isLeaf": true
+			},
+			{
+				"value": "YA/6106",
+				"label": "延安市",
+				"isLeaf": true
+			},
+			{
+				"value": "HZ/6107",
+				"label": "汉中市",
+				"isLeaf": true
+			},
+			{
+				"value": "YL/6108",
+				"label": "榆林市",
+				"isLeaf": true
+			},
+			{
+				"value": "AK/6109",
+				"label": "安康市",
+				"isLeaf": true
+			},
+			{
+				"value": "SL/6110",
+				"label": "商洛市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "GS",
+		"label": "甘肃",
+		"children": [
+			{
+				"value": "LZ/6201",
+				"label": "兰州市",
+				"isLeaf": true
+			},
+			{
+				"value": "JYG/6202",
+				"label": "嘉峪关市",
+				"isLeaf": true
+			},
+			{
+				"value": "JC/6203",
+				"label": "金昌市",
+				"isLeaf": true
+			},
+			{
+				"value": "BY/6204",
+				"label": "白银市",
+				"isLeaf": true
+			},
+			{
+				"value": "TS/6205",
+				"label": "天水市",
+				"isLeaf": true
+			},
+			{
+				"value": "WW/6206",
+				"label": "武威市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZY/6207",
+				"label": "张掖市",
+				"isLeaf": true
+			},
+			{
+				"value": "PL/6208",
+				"label": "平凉市",
+				"isLeaf": true
+			},
+			{
+				"value": "JQ/6209",
+				"label": "酒泉市",
+				"isLeaf": true
+			},
+			{
+				"value": "QY/6210",
+				"label": "庆阳市",
+				"isLeaf": true
+			},
+			{
+				"value": "DX/6211",
+				"label": "定西市",
+				"isLeaf": true
+			},
+			{
+				"value": "LN/6212",
+				"label": "陇南市",
+				"isLeaf": true
+			},
+			{
+				"value": "LX/6229",
+				"label": "临夏回族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "GN/6230",
+				"label": "甘南藏族自治州",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "QH",
+		"label": "青海",
+		"children": [
+			{
+				"value": "XN/6301",
+				"label": "西宁市",
+				"isLeaf": true
+			},
+			{
+				"value": "HD/6302",
+				"label": "海东市",
+				"isLeaf": true
+			},
+			{
+				"value": "HB/6322",
+				"label": "海北藏族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "HN/6323",
+				"label": "黄南藏族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "HN/6325",
+				"label": "海南藏族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "GL/6326",
+				"label": "果洛藏族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "YS/6327",
+				"label": "玉树藏族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "HX/6328",
+				"label": "海西蒙古族藏族自治州",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "NX",
+		"label": "宁夏",
+		"children": [
+			{
+				"value": "YC/6401",
+				"label": "银川市",
+				"isLeaf": true
+			},
+			{
+				"value": "SZS/6402",
+				"label": "石嘴山市",
+				"isLeaf": true
+			},
+			{
+				"value": "WZ/6403",
+				"label": "吴忠市",
+				"isLeaf": true
+			},
+			{
+				"value": "GY/6404",
+				"label": "固原市",
+				"isLeaf": true
+			},
+			{
+				"value": "ZW/6405",
+				"label": "中卫市",
+				"isLeaf": true
+			}
+		]
+	},
+	{
+		"value": "XJ",
+		"label": "新疆",
+		"children": [
+			{
+				"value": "WLMQ/6501",
+				"label": "乌鲁木齐市",
+				"isLeaf": true
+			},
+			{
+				"value": "KLMY/6502",
+				"label": "克拉玛依市",
+				"isLeaf": true
+			},
+			{
+				"value": "TLF/6521",
+				"label": "吐鲁番地区",
+				"isLeaf": true
+			},
+			{
+				"value": "HM/6522",
+				"label": "哈密地区",
+				"isLeaf": true
+			},
+			{
+				"value": "LJ/6523",
+				"label": "昌吉回族自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "BETL/6527",
+				"label": "博尔塔拉蒙古自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "BY/6528",
+				"label": "巴音郭楞蒙古自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "AKS/6529",
+				"label": "阿克苏地区",
+				"isLeaf": true
+			},
+			{
+				"value": "KSLS/6530",
+				"label": "克孜勒苏柯尔克孜自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "KS/6531",
+				"label": "喀什地区",
+				"isLeaf": true
+			},
+			{
+				"value": "HT/6532",
+				"label": "和田地区",
+				"isLeaf": true
+			},
+			{
+				"value": "YL/6540",
+				"label": "伊犁哈萨克自治州",
+				"isLeaf": true
+			},
+			{
+				"value": "TC/6542",
+				"label": "塔城地区",
+				"isLeaf": true
+			},
+			{
+				"value": "ALT/6543",
+				"label": "阿勒泰地区",
+				"isLeaf": true
+			},
+			{
+				"value": "SZX/6590",
+				"label": "自治区直辖县级行政区划",
+				"isLeaf": true
+			},
+			{
+				"value": "SHZ/6591",
+				"label": "石河子",
+				"isLeaf": true
+			},
+			{
+				"value": "KT/6593",
+				"label": "奎屯",
+				"isLeaf": true
+			}
+		]
+	}
+]

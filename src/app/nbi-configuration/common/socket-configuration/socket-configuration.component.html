@@ -1,0 +1,157 @@
+<section class="socket-configuration">
+  <form nz-form class="ant-advanced-search-form" [formGroup]="socketForm" (ngSubmit)="submitForm()">
+    <nz-collapse [nzBordered]="true">
+      <nz-collapse-panel nzHeader="{{translate.instant('Basic Configuration')}}" [nzActive]="true">
+        <nz-spin [nzSpinning]="isFetching">
+          <div class="nz-collapse-data">
+            <div nz-row [nzGutter]="24">
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Socket Interface Switch')}} </nz-form-label>
+                  <nz-form-control>
+                    <nz-switch formControlName="enable" nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}"
+                      (click)="clickStatus()"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <!-- <nz-form-label style="margin-left: -7px;" nzRequired>OMC No</nz-form-label> -->
+                  <nz-form-label nzRequired>{{translate.instant('OMC No')}}
+                    <span nz-tooltip nzTitle="{{translate.instant('omc_no_tooltip')}}">
+                      <i nz-icon nzType="question" nzTheme="outline"></i>
+                    </span>
+                  </nz-form-label>
+                  <nz-form-control [nzErrorTip]="omcnoErrorTpl">
+                    <input nz-input formControlName="omc_no" />
+                    <ng-template #omcnoErrorTpl let-control>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('Invalid_OMC_No')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <!-- </div>
+            <div nz-row [nzGutter]="24"> -->
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('OMC Name')}} </nz-form-label>
+                  <nz-form-control nzErrorTip="Required!">
+                    <input nz-input formControlName="omc_name" />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('Management Device Type')}} </nz-form-label>
+                  <nz-form-control nzErrorTip="Required!">
+                    <!-- <input nz-input formControlName="management_device_type" /> -->
+                    <nz-select nzMode="multiple" nzPlaceHolder="Please select" formControlName="management_device_type"
+                      [(ngModel)]="listOfSelectedValue">
+                      <nz-option *ngFor="let option of listOfOption" [nzLabel]="option.label" [nzValue]="option.value">
+                      </nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <!-- </div>
+            <div nz-row [nzGutter]="24"> -->
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('ProvinceCity')}} </nz-form-label>
+                  <nz-form-control nzErrorTip="Required!">
+                    <!-- <input nz-input formControlName="province_city" /> -->
+                    <nz-cascader [nzOptions]="nzOptions" formControlName="city_shortname"></nz-cascader>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+
+    <nz-collapse [nzBordered]="true">
+      <nz-collapse-panel nzHeader="{{translate.instant('PAS_FTP_Configuration')}}" [nzActive]="true">
+        <nz-spin [nzSpinning]="isFetching">
+          <div class="nz-collapse-data">
+            <div nz-row [nzGutter]="24">
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Pas_Ftp_Type')}} </nz-form-label>
+                  <nz-form-control nzErrorTip="Required!">
+                    <nz-select nzPlaceHolder="Please select" formControlName="type"
+                      (ngModelChange)="onFtpTypeChange($event)">
+                      <nz-option nzValue="ftp" nzLabel="{{translate.instant('FTP')}}"></nz-option>
+                      <nz-option nzValue="sftp" nzLabel="{{translate.instant('SFTP')}}"></nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('Pas Ftp IP')}}</nz-form-label>
+                  <nz-form-control nzHasFeedback [nzErrorTip]="ipErrorTpl">
+                    <input nz-input formControlName="ip" style="padding-right: 11px;" />
+                    <ng-template #ipErrorTpl let-control>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('IP format is incorrect!')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <!-- </div>
+            <div nz-row [nzGutter]="24"> -->
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('Pas Ftp Port')}} </nz-form-label>
+                  <nz-form-control [nzErrorTip]="portErrorTpl">
+                    <input nz-input formControlName="port" />
+                    <ng-template #portErrorTpl let-control>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('Port is incorrect!')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Required!')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('Pas Ftp Username')}} </nz-form-label>
+                  <nz-form-control nzErrorTip="Required!">
+                    <input nz-input formControlName="user" />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <!-- </div>
+            <div nz-row [nzGutter]="24"> -->
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('Pas Ftp Password')}} </nz-form-label>
+                  <nz-form-control nzErrorTip="Required!">
+                    <input nz-input type="password" formControlName="pwd" />
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <div nz-col [nzSpan]="24" class="search-area">
+      <button nz-button [nzType]="'primary'" class="btn-b" [nzLoading]="isSubmitting">{{translate.instant('Save')}}</button>
+      <button nz-button [nzType]="'primary'" type="button" class="btn-g ml-11" (click)="fetchData()">{{translate.instant('Reload')}}</button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,92 @@
+@import '../../../../assets/variables.scss';
+
+.btn-g {
+  @include btn-g;
+  width: 81px;
+  height: 32px;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 7px;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color: #FFFFFF;
+}
+
+.btn-b {
+  @include btn-b;
+  width: 81px;
+  height: 32px;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 7px;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color: #FFFFFF;
+}
+
+.btn-r {
+  @include btn-r;
+  width: 67px;
+  height: 32px;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 7px;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color: #FFFFFF;
+}
+
+.action-buttons {
+  background-color: rgba(209, 234, 252, 1);
+  margin-top: 3rem;
+  padding: 10px 20px;
+}
+
+textarea {
+  resize: none;
+}
+
+.table-th {
+  padding: 14px 14px;
+}
+
+.ant-table-selection-column {
+  padding: 0;
+}
+
+.filename {
+  color: #0099FF;
+  font-family: 'Arial';
+}
+
+.ne-type-text-wrap {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  width: 400px;
+}
+
+
+@media only screen and (max-width: 1400px) {
+  .action-buttons {
+    margin-top: 1rem;
+  }
+}

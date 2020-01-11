@@ -1,0 +1,178 @@
+.unmconf-wrapper {
+  background-color: #FAFAFA;
+  background: url('../../../assets/images/unm-configuration-bg.png') left top no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  padding: 0% 3%;
+
+  .unmconf-left-data {
+    background: rgb(255, 255, 255, 1);
+    padding: 0px 15px;
+    width: 100%;
+    max-width: 317px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 10px 0px rgba(0,0,0,.08);
+    position: relative;
+    top: -5px;
+
+    .logo-search {
+      text-align: center;
+      padding: 0px 15px;
+
+      img {
+        max-width: 70%;
+      }
+
+      .search {
+        margin-top: 32px;
+        // border-bottom: 1px solid #dddddd;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+
+        .ant-form-item {
+          margin-bottom: 0px;
+
+          .ant-input {
+            background: linear-gradient(to bottom, #0BB2BC, #1F98EF);
+            color: #ffffff;
+            border-radius: 8px;
+            height: 40px;
+          }
+        }
+
+        .anticon {
+          color: #ffffff;
+          cursor: pointer;
+        }
+
+        ::placeholder {
+          color: #ffffff;
+        }
+      }
+    }
+
+    ul {
+      padding: 0px;
+      margin: 0px;
+
+      li {
+        padding-bottom: 15px;
+
+        a {
+          color: #6b6b6b;
+          font-size: 90%;
+
+          &:hover {
+            color: rgb(11, 194, 169);
+          }
+        }
+
+        .router-link-active {
+          color: rgb(11, 194, 169);
+          color: #0bc2a9;
+        }
+      }
+    }
+
+    .title-left-border {
+      background: #8ac8f7;
+      position: relative;
+      height: 47px;
+      width: 10px;
+      left: -15px;
+      top: 207px;
+    }
+  }
+
+  .unmconf-right-data {
+    width: 100%;
+    margin: 20px 0px 0px 24px;
+    // max-width: 1280px;
+    overflow: hidden;
+    padding: 5px;
+
+    .unconf-right-header {
+      display: flex;
+      justify-content: space-between;
+
+      .left-header {
+        margin-left: 15px;
+
+        h1 {
+          color: #fff;
+          font-weight: 600;
+          margin-bottom: 15px;
+          font-size: 280%
+        }
+      }
+
+      .right-header {
+        ul {
+          display: inline-flex;
+          padding: 30px 10px 0px 0px;
+          margin: 0px;
+
+          li {
+            color: #ffffff;
+            font-size: 140%;
+
+            &:first-child {
+              margin-right: 15px;
+
+              .anticon {
+                border: 1px solid #ffffff;
+                border-radius: 100%;
+              }
+            }
+
+            .anticon {
+              margin-right: 5px;
+              font-size: 125%;
+            }
+
+            img {
+              width: 18px;
+              height: 18px;
+              margin-right: 5px;
+              position: relative;
+              top: -2px;
+            }
+
+            a {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+
+    .unconf-right-page-data {
+      background: #fff;
+      min-height: 442px;
+      padding: 30px 0px;
+      border-radius: 20px;
+      margin-top: 25px;
+      box-shadow: 0 5px 10px 0px rgba(0,0,0,.08);
+
+      .tab-content {
+        padding: 10px 20px;
+      }
+    }
+  }
+}
+
+.router-link-active {
+  color: rgb(11, 194, 169);
+  color: #0bc2a9;
+}
+
+@media only screen and (max-width: 1400px) {
+  .unmconf-wrapper {
+    padding: 0% 1%;
+
+    .unmconf-right-data {
+      margin-left: 12px;
+    }
+  }
+}

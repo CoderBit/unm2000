@@ -1,0 +1,40 @@
+<section class="ason-configuration">
+  <form nz-form class="ant-advanced-search-form" [formGroup]="asonconfigForm" (ngSubmit)="submitForm()">
+    <nz-collapse [nzBordered]="true">
+      <nz-collapse-panel *ngFor="let panel of panels" nzHeader="{{translate.instant('Basic Configuration')}}" [nzActive]="panel.active">
+        <nz-spin [nzSpinning]="isSpinning">
+          <div class="nz-collapse-data">
+            <div nz-row [nzGutter]="24">
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Ason Switch')}}</nz-form-label>
+                  <nz-form-control nzErrorTip="Required!">
+                    <!-- <nz-select nzPlaceHolder="Choose" formControlName="asonSwitch">
+                      <nz-option nzValue="true" nzLabel="True"></nz-option>
+                      <nz-option nzValue="false" nzLabel="False"></nz-option>
+                    </nz-select> -->
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}" formControlName="asonSwitch">
+                      </nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzXl]="12" [nzXXl]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Ason Simulator Switch')}} </nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}" formControlName="asonSimulatorSwitch">
+                    </nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <div nz-col [nzSpan]="24" class="search-area">
+      <button nz-button [nzType]="'primary'" class="btn-b" [nzLoading]="isLoading">{{translate.instant('Save')}} </button>
+      <button type="button" nz-button [nzType]="'primary'" class="btn-g ml-1" (click)="fetchAsonData()">{{translate.instant('Reload')}}</button>
+    </div>
+  </form>
+</section>

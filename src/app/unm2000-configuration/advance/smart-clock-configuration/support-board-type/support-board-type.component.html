@@ -1,0 +1,153 @@
+<section class="support-configuration">
+    <nz-collapse [nzBordered]="true">
+    
+      <nz-collapse-panel *ngFor="let panel of panels" nzHeader="{{translate.instant('Support Board Type')}}" [nzActive]="panel.active">
+    
+    
+        <div class="operate">
+          <nz-input-group nzSearch [nzSuffix]="suffixIconButton" style="width: 30%;float: right;">       
+             <input  nz-input [(ngModel)]="searchData"   placeholder="{{translate.instant('search_here')}}" (input)='searchFilter()'  />
+          </nz-input-group>
+          <ng-template #suffixIconButton>
+              <i nz-icon nzType="search"></i>
+          </ng-template>
+         
+          <br />
+        </div>
+        <br />
+       
+        <nz-spin [nzSpinning]="isSpinning">
+        <nz-table 
+        #rowSelectionPTSPOTSTable 
+        nzShowPagination 
+        nzShowSizeChanger 
+        
+        [nzScroll]="{ y: '240px' }"
+        [nzPageSize]="30"
+          [nzPageSizeOptions]="[30, 40,50]"
+          [nzData]="listOfAllDataPTSPotshtml" (nzCurrentPageDataChange)="currentPageDataChange($event)">
+          <thead>
+            <tr>
+              <th   
+              nzShowCheckbox 
+              [(nzChecked)]="isAllDisplayDataChecked" 
+              [nzIndeterminate]="isIndeterminate"
+                (nzCheckedChange)="checkAll($event)" 
+                [nzDisabled]="isCheckBoxDisabled"> </th>
+              <th nzWidth="180px">{{translate.instant('unicol')}}</th>
+              <th nzWidth="300px">{{translate.instant('board_name')}}</th>
+              <th nzWidth="300px">{{translate.instant('board_class')}}</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of rowSelectionPTSPOTSTable.data;let i=index" class="ant-table-selection-column">
+              <td nzShowCheckbox [(nzChecked)]="mapOfCheckedId[data.unicol]"
+                (nzCheckedChange)="refreshStatus(); selectSomeData(data)" ></td>
+                
+              <td >{{ data.unicol }}</td>
+              <td >{{ data.boardname }}</td>
+              <td>{{ data.boardclass }}</td>
+              
+    
+            </tr>
+          </tbody>
+        </nz-table>
+      </nz-spin>
+      </nz-collapse-panel>
+    
+    </nz-collapse>
+    
+    <button nz-button [nzType]="'primary'" class="btn-b" (click)="showAddModalPtn()">{{translate.instant('Add')}}</button>
+    <!-- <button nz-button [nzType]="'primary'" class="btn-y ml-1" (click)="showAddModalPots('pots')">Add POTS</button> -->
+    
+    <button nz-button [nzType]="'primary'" class="btn-r ml-1" [disabled]="numberOfChecked === 0"
+    (click)="showDeleteConfirm()">{{translate.instant('delete')}}</button>   
+    
+    <!-- Below the modal have combine feature -->
+    <!-- add show model -->
+    <nz-modal 
+               [(nzVisible)]="isVisiblePtn"
+               (nzOnCancel)="handleCancelTop()" 
+               nzMaskClosable=true           
+               nzClosable=true
+               [nzTitle]="title" 
+               nzWidth="970" 
+               nzOkText="{{translate.instant('Add')}}" 
+               nzCancelText="{{translate.instant('cancel')}}" 
+               nzMaskClosable="false"  
+               (nzOnOk)="handleAdd()"          
+              >
+      <!-- (nzOnCancel)="handleCancel()" -->
+      <div class="examplesearch-input">
+          <form nz-form class="ant-advanced-search-form" [formGroup]="searchForm" (ngSubmit)="submitSearch()">
+                
+        <nz-form-item nzFlex style="display: inline-flex;float: left;padding: 0px 10px;">
+            <nz-form-label>{{translate.instant('uni_col')}} </nz-form-label>
+            <nz-form-control >
+                <input nz-input placeholder="{{translate.instant('uni_col')}} " formControlName="unical"  #unical />
+            </nz-form-control>
+          </nz-form-item>   
+        <nz-form-item nzFlex style="display: flex; float: left;padding: 0px 28px 0px 12px;">
+            <nz-form-label >{{translate.instant('board_name')}}  </nz-form-label>
+            <nz-form-control >
+                <input nz-input placeholder="{{translate.instant('board_name')}} " formControlName="boardname" #boardname   />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item nzFlex>
+          <button nz-button nzType="danger" class="btn-g">{{translate.instant('query')}}</button>
+        </nz-form-item>
+      </form>
+       
+      </div>
+     
+      <nz-spin [nzSpinning]="isModalSpinning">
+    
+      <nz-table 
+            #rowSelectionModalTable 
+            nzShowPagination 
+            nzShowSizeChanger 
+            [nzScroll]="{ y: '240px' }"
+            
+            [nzData]="listOfAllModal"
+            nzShowPagination
+            nzShowSizeChanger 
+            [nzPageSize]="30"
+            [nzPageSizeOptions]="[30, 40,50]" 
+           
+           (nzCurrentPageDataChange)="currentPageDataChangeModal($event)">
+        <thead>
+          
+          <tr>
+            <th 
+             
+            nzShowCheckbox
+            [(nzChecked)]="isAllDisplayDataCheckedModal"
+            [nzIndeterminate]="isIndeterminateModal"
+            [nzDisabled]="isCheckBoxDisabledModal"
+            (nzCheckedChange)="checkAllModal($event)"> </th>
+            <th nzWidth="150px">{{translate.instant('unicol')}}</th>
+            <th nzWidth="250px">{{translate.instant('board_name')}}</th>
+            <th nzWidth="250px">{{translate.instant('board_class')}}</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of rowSelectionModalTable.data;let i=index" class="ant-table-selection-column">
+            <td 
+            nzShowCheckbox
+            nzShowCheckbox
+                [(nzChecked)]="mapOfCheckedIdModal[data.unicol]"           
+                (nzCheckedChange)="refreshStatusModal();selectSomeDataModal(data)"></td>
+            <td>{{data.unicol}}</td>
+            <td >{{ data.boardname}}</td>
+            <td >{{ data.boardclass}}</td>
+            
+    
+          </tr>
+        </tbody>
+      </nz-table>
+    </nz-spin>
+    </nz-modal>
+    </section>
+    <!-- end add show model -->

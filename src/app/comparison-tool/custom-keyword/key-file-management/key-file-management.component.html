@@ -1,0 +1,127 @@
+<section class="key-file-management">
+  <nz-collapse [nzBordered]="true" class="mb-3">
+    <nz-collapse-panel [nzHeader]="'Key File Management'" [nzActive]="true" [nzShowArrow]="false">
+      <div class="nz-collapse-data">
+        <div class="action-buttons">
+          <button nz-button [nzType]="'primary'" class="btn-b" (click)="clickAdd()">Add</button>
+          <button nz-button [nzType]="'primary'" class="btn-g ml-1" (click)="clickModify()"
+            [disabled]="numberOfChecked !== 1">Modify</button>
+          <button nz-button [nzType]="'primary'" class="btn-r ml-1" (click)="onDelete()"
+            [disabled]="numberOfChecked === 0">Delete</button>
+        </div>
+        <div class="key-table">
+          <nz-spin [nzSpinning]="isLoading">
+            <nz-table #rowSelectionTable [nzShowPagination]="false" [nzData]="listOfAllData" [nzScroll]="{ y: '200px' }"
+              [nzPageSize]="listOfAllData.length" (nzCurrentPageDataChange)="currentPageDataChange($event)">
+              <thead>
+                <tr>
+                  <th class="table-th" [(nzChecked)]="isAllDisplayDataChecked" [nzIndeterminate]="isIndeterminate"></th>
+                  <th nzWidth="70px" class="table-th">S.No</th>
+                  <th nzWidth="70px" class="table-th">Key File Name</th>
+                  <th nzWidth="250px" class="table-th">Binding NE Type</th>
+                  <th nzWidth="400px" class="table-th">Key Description</th>
+                  <th nzWidth="300px" class="table-th">Operation Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of rowSelectionTable.data; let i = index;">
+                  <td class="table-th" nzShowCheckbox [(nzChecked)]="mapOfCheckedId[data.keyfile.name]"
+                    [nzDisabled]="data.disabled" (nzCheckedChange)="refreshStatus(data)"></td>
+                  <td class="table-th">{{ i+1 }}.</td>
+                  <td class="table-th">{{ data.keyfile.name }}</td>
+                  <td class="table-th ne-type-text-wrap" nz-tooltip [nzTitle]="data.devicetype.typecodes">
+                    {{ data.devicetype.typecodes }}</td>
+                  <td class="table-th">{{ data.description.content }}</td>
+                  <td class="table-th">{{ data.createtime.operationTime }}</td>
+                </tr>
+              </tbody>
+            </nz-table>
+          </nz-spin>
+        </div>
+      </div>
+    </nz-collapse-panel>
+  </nz-collapse>
+
+  <nz-modal [(nzVisible)]="isAdd" nzTitle="Add" nzOkText="Add" (nzOnCancel)="handleCancel()" (nzOnOk)="onAdd()">
+    <form nz-form [formGroup]="addForm">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="neType">Binding NE Type</nz-form-label>
+        <nz-form-control [nzSm]="17" [nzXs]="24" [nzErrorTip]="neTypeErrorTpl">
+          <input nz-input placeholder="148,87" formControlName="neType" id="neType" />
+          <ng-template #neTypeErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('pattern')">
+              Invalid NE Type
+            </ng-container>
+            <ng-container *ngIf="control.hasError('required')">
+              Required!
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="">Upload Keyfile</nz-form-label>
+        <nz-form-control [nzSm]="17" [nzXs]="24" nzErrorTip="">
+          <!-- <nz-upload nzAction="https://jsonplaceholder.typicode.com/posts/" [nzFileList]="fileList"> -->
+          <button nz-button type="button" (click)="uploadFile.click()"><i nz-icon nzType="upload"></i><span>Select
+              File</span></button>
+          <input type="file" id="file" (change)="handleFileInput($event.target.files)" hidden #uploadFile>
+          <div class="filename"><i nz-icon nzType="paper-clip"
+              nzTheme="outline"></i>{{fileToUpload?.name === null ? 'No File Choosen' : fileToUpload.name}}</div>
+          <!-- </nz-upload> -->
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="description">Key Description</nz-form-label>
+        <nz-form-control [nzSm]="17" [nzXs]="24" nzErrorTip="Error">
+          <textarea nz-input rows="4" placeholder="This will be description given by user"
+            formControlName="description"></textarea>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </nz-modal>
+
+  <nz-modal [(nzVisible)]="isModify" nzTitle="Modify" nzOkText="Save" (nzOnCancel)="handleCancel()"
+    (nzOnOk)="onModify()" nzWidth="590">
+    <form nz-form [formGroup]="modifyForm">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="neType">Binding NE Type</nz-form-label>
+        <nz-form-control [nzSm]="17" [nzXs]="24" [nzErrorTip]="neTypeError">
+          <input nz-input placeholder="148,87" formControlName="neType" />
+          <ng-template #neTypeError let-control>
+            <ng-container *ngIf="control.hasError('pattern')">
+              Invalid NE Type
+            </ng-container>
+            <ng-container *ngIf="control.hasError('required')">
+              Required!
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="originalKeyFile">Original Keyfile</nz-form-label>
+        <nz-form-control [nzSm]="17" [nzXs]="24" nzErrorTip="Required!">
+          <input nz-input placeholder="r845_key.xml" id="originalKeyFile" formControlName="originalKeyFile" readonly
+            style="background: lightgrey;" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="">Re-upload Keyfile</nz-form-label>
+        <nz-form-control [nzSm]="17" [nzXs]="24" nzErrorTip="Required!">
+          <button nz-button type="button" (click)="reUploadFile.click()"><i nz-icon nzType="upload"></i><span>Select
+              File</span></button>
+          <input type="file" id="file" (change)="rehandleFileInput($event.target.files)" hidden #reUploadFile>
+          <div class="filename"><i nz-icon nzType="paper-clip"
+              nzTheme="outline"></i>{{refileToUpload?.name === null ? 'No File Choosen' : refileToUpload.name}}</div>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="description">Description</nz-form-label>
+        <nz-form-control [nzSm]="17" [nzXs]="24" nzErrorTip="Required!">
+          <textarea nz-input rows="4" placeholder="This will be description given by user"
+            formControlName="description"></textarea>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </nz-modal>
+
+</section>

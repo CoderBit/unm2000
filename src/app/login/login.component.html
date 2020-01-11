@@ -1,0 +1,40 @@
+<div class="login-wrapper">
+  <div class="login">
+    <div class="loginhead">
+      <div class="logo">
+        <img src="../../assets/images/logo.png" alt="FiberHome">
+      </div>
+      <h1>UMC<sup>2</sup>{{translate.instant('tools')}} </h1>
+      
+    </div>
+    <form nz-form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="{{translate.instant('Please input your username!')}}">
+          <nz-input-group nzPrefixIcon="user">
+            <input nz-input type="text" formControlName="username" placeholder="{{translate.instant('Username')}}" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="{{translate.instant('Please input your Password!')}}">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password" placeholder="{{translate.instant('Password')}}" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <div class="logbutton">
+        <button nz-button nzType="primary" nzShape="round" type="submit">
+            {{translate.instant('login')}}<i nz-icon nzType="arrow-right" nzTheme="outline"></i>
+        </button>
+      </div>
+    </form>
+    
+  </div>
+
+<!-- <label>
+  {{ 'HOME.SELECT' | translate }}
+  <select #langSelect (change)="translate.use(langSelect.value)">
+    <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+  </select>
+</label> -->
+</div>

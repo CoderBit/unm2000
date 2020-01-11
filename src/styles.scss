@@ -1,0 +1,574 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+@import './assets/variables.scss';
+
+html,
+body {
+  background: #fafafa;
+  color: #222222;
+  font-size: 10px;
+  text-rendering: optimizeLegibility;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul li {
+  list-style: none;
+}
+
+.breadcrumb {
+  background-color: transparent;
+}
+
+
+
+/****************LEFT NAVIGATION*****************/
+.unfnav-data {
+  .ant-collapse {
+    border: none;
+    background: none;
+
+    .ant-collapse-item {
+      border: none;
+
+      .ant-collapse-header {
+        padding: 0px 46px 10px 0px;
+        color: #2196f3;
+        font-size: 100%;
+
+        .ant-collapse-arrow {
+          left: 95%;
+          color: #444444;
+          top: 11px;
+        }
+      }
+
+      .ant-collapse-content {
+        border: none;
+        background: none;
+
+        .ant-collapse-content-box {
+          padding: 10px 15px;
+        }
+      }
+    }
+
+    .my-header.ant-collapse-item {
+      .ant-collapse-header {
+        padding: 0px 46px 0px 0px;
+      }
+
+      .ant-collapse-content {
+        .ant-collapse-content-box {
+          padding: 10px 15px 0px;
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  .ant-breadcrumb {
+    a {
+      color: #ffffff;
+      font-family: 'Arial';
+      font-weight: 400;
+      font-style: normal;
+      font-size: 13px;
+      text-align: center;
+      line-height: normal;
+
+      &:hover {
+        color: rgb(72, 255, 72);
+      }
+    }
+
+    .ant-breadcrumb-link {
+      color: #ffffff;
+      font-size: 90%;
+    }
+
+    .ant-breadcrumb-separator {
+      color: #ffffff;
+      font-size: 90%;
+    }
+  }
+}
+
+.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
+  margin-left: 20px;
+  margin-right: 0px;
+}
+
+.ant-tabs-nav .ant-tabs-tab-active {
+  color: #1890ff;
+  font-weight: normal;
+}
+
+
+.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab {
+  border: 1px solid $border-c;
+}
+
+.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active {
+  color: $border-c;
+  border-color: $border-c;
+  border-bottom: 1px solid #fff;
+}
+
+.ant-tabs-bar {
+  border-bottom: 1px solid $border-c;
+}
+
+.ant-btn-primary {
+  color: #fff;
+  background-color: #1890ff;
+  border-color: #1890ff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+
+.unconf-right-page-data {
+  .ant-collapse {
+    position: relative;
+    margin-bottom: 20px;
+    @include border-g;
+    border-radius: 0px;
+
+    .ant-collapse-item {
+      .ant-collapse-header {
+        background: #fff;
+        display: inline-flex;
+        position: absolute;
+        top: -20px;
+        left: 20px;
+      }
+
+      .ant-collapse-content {
+        border: 0px;
+        border-radius: 5px;
+
+        label {
+          min-width: 274px;
+          display: inline-block;
+          font-size: 85%;
+        }
+      }
+    }
+  }
+}
+
+.ant-modal-content {
+  .ant-modal-header {
+    .ant-modal-title {
+      color: #ffffff;
+    }
+
+    background: linear-gradient(180deg, rgba(15, 172, 201, 1) 0%, rgba(26, 160, 225, 1) 100%, );
+  }
+
+  .ant-modal-close {
+    color: #ffffff;
+  }
+
+  .ant-modal-body {
+    .ant-form-item-label>label {
+      color: #666666;
+    }
+  }
+}
+
+.ant-btn-danger {
+  color: #fff;
+  background-color: rgba(0, 191, 165, 1);
+  border-color: rgba(0, 191, 165, 1);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+
+
+.ant-table-selection-column {
+  label {
+    min-width: 27px !important;
+  }
+}
+
+.ant-table-selection-column .ant-table-tbody>tr>td {
+  label {
+    min-width: 27px !important;
+  }
+}
+
+.example-input .ant-input {
+  width: 300px;
+  margin: 0 8px 8px 0;
+}
+
+.examplesearch-input .ant-input {
+  margin: 0 8px 8px 0;
+  width: 270px;
+}
+
+/**************** Tooltip Start *****************/
+.ant-tooltip-content .ant-tooltip-inner {
+  font-size: 12px;
+}
+
+/**************** Tooltip End *****************/
+
+.business-configuration,
+.pon-product-configuration,
+.simulation-test-configuration {
+  .ant-advanced-search-form .ant-form-item {
+    margin-bottom: 0px;
+    margin: 20px 0;
+  }
+}
+
+.unm2000-performance-configuration {
+  .ant-collapse {
+    .ant-collapse-item {
+      .ant-collapse-content {
+        label {
+          min-width: 230px;
+        }
+      }
+    }
+  }
+}
+
+.netconf-configuration {
+  .ant-collapse {
+    .ant-collapse-item {
+      .ant-collapse-content {
+        label {
+          min-width: 145px;
+        }
+      }
+    }
+  }
+}
+
+.software-download-configuration {
+  .ant-collapse {
+    .ant-collapse-item {
+      .ant-collapse-content {
+        label {
+          min-width: 210px;
+        }
+      }
+    }
+  }
+}
+
+.pon-product-configuration {
+  .ant-collapse {
+    .ant-collapse-item {
+      .ant-collapse-content {
+        label {
+          min-width: 210px;
+        }
+      }
+    }
+  }
+
+  .ant-input-group-addon {
+    background-color: #fff;
+    border: 1px solid #fff;
+  }
+
+  .ant-input-group>.ant-input:first-child,
+  .ant-input-group-addon:first-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+.simulation-test-configuration {
+  .ant-collapse {
+    .ant-collapse-item {
+      .ant-collapse-content {
+        label {
+          min-width: 180px;
+        }
+      }
+    }
+  }
+}
+
+.telementry-configuration {
+  .ant-collapse {
+    .ant-collapse-item {
+      .ant-collapse-content {
+        label {
+          min-width: 212px;
+        }
+      }
+    }
+  }
+}
+
+.common-nbi-configuration {
+  .ant-collapse {
+    .ant-collapse-item {
+      .ant-collapse-content {
+        label {
+          min-width: 180px;
+        }
+      }
+    }
+  }
+}
+
+.corba-configuation {
+  .ant-collapse {
+    .ant-collapse-item {
+      .ant-collapse-content {
+        label {
+          min-width: 166px;
+        }
+      }
+    }
+  }
+}
+
+.i2-configuration {
+  .ant-collapse {
+    .ant-collapse-item {
+      .ant-collapse-content {
+        label {
+          min-width: 190px;
+        }
+      }
+    }
+  }
+}
+
+.socket-configuration {
+  nz-collapse {
+    margin-bottom: 3rem;
+  }
+  .ant-collapse {
+    .ant-collapse-item {
+      .ant-collapse-content {
+        label {
+          min-width: 183px;
+        }
+      }
+    }
+  }
+}
+
+/********************nbi configuration css *******************/
+.commonnbi {
+  nz-collapse {
+    margin-bottom: 3rem;
+  }
+}
+
+.ant-cascader-input.ant-input {
+  padding-right: 13px;
+}
+
+.ant-cascader-menu {
+  min-width: 98px;
+}
+
+.ant-spin-blur {
+  opacity: 0;
+}
+
+nz-switch {
+  display: contents !important;
+}
+
+
+
+/***********************end nbi configuration css ***************/
+
+@media only screen and (max-width: 1400px) {
+  .telementry-configuration {
+    .ant-collapse {
+      .ant-collapse-item {
+        .ant-collapse-content {
+          label {
+            min-width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  .common-nbi-configuration {
+    .basic-configuration {
+      .ant-collapse {
+        .ant-collapse-item {
+          .ant-collapse-content {
+            label {
+              min-width: 165px;
+            }
+          }
+        }
+      }
+    }
+    .ftp-configuration {
+      .ant-collapse {
+        .ant-collapse-item {
+          .ant-collapse-content {
+            label {
+              min-width: 108px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .corba-configuation {
+    .ant-collapse {
+      .ant-collapse-item {
+        .ant-collapse-content {
+          label {
+            min-width: 166px;
+          }
+        }
+      }
+    }
+
+    .ant-modal-title {
+      font-weight: bold;
+    }
+  }
+
+  .supportboard-configuration {
+    .ant-collapse {
+      .ant-collapse-item {
+        .ant-collapse-content {
+          label {
+            min-width: 162px;
+          }
+        }
+      }
+    }
+
+    .ant-modal-title {
+      font-weight: bold;
+    }
+  }
+
+  .socket-configuration {
+    .ant-collapse {
+      .ant-collapse-item {
+        .ant-collapse-content {
+          label {
+            min-width: 181px;
+          }
+        }
+      }
+    }
+  }
+
+  .support-configuration {
+    .ant-collapse {
+      .ant-collapse-item {
+        .ant-collapse-content {
+          label {
+            min-width: 162px;
+          }
+        }
+      }
+    }
+
+    .ant-modal-title {
+      font-weight: bold;
+
+    }
+  }
+
+  .ason-configuration {
+    .ant-collapse {
+      .ant-collapse-item {
+        .ant-collapse-content {
+          label {
+            min-width: 185px;
+          }
+        }
+      }
+    }
+  }
+
+  .alarm-configuration {
+    .ant-collapse {
+      .ant-collapse-item {
+        .ant-collapse-content {
+          label {
+            min-width: 290px;
+          }
+        }
+      }
+    }
+  }
+
+  .software-download-configuration {
+    .ant-collapse {
+      .ant-collapse-item {
+        .ant-collapse-content {
+          label {
+            min-width: 190px;
+          }
+        }
+      }
+    }
+  }
+
+  .netconf-configuration {
+    .ant-collapse {
+      .ant-collapse-item {
+        .ant-collapse-content {
+          label {
+            min-width: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  // .unm2000-performance-configuration {
+  //   .ant-collapse {
+  //     .ant-collapse-item {
+  //       .ant-collapse-content {
+  //         label {
+  //           min-width: 207px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  .pon-product-configuration {
+      .ant-collapse {
+        .ant-collapse-item {
+          .ant-collapse-content {
+            label {
+              min-width: 175px;
+            }
+          }
+        }
+      }
+  }
+}
+
+
+.ant-modal-title {
+  font-weight: bold;
+
+}
+
+.ant-table-column-title {
+  font-family: 'Arial Bold', 'Arial';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 12px;
+}

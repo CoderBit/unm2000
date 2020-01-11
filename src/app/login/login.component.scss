@@ -1,0 +1,55 @@
+
+.login-wrapper{
+  background:url("../../assets/images/login-bg.jpg") left top no-repeat;
+  background-size:cover;
+  height:100vh;
+  width:100%;
+  .login{
+    background:#ffffff;
+    max-width:555px;
+    width:100%;
+    padding:4%;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 8px;
+    .loginhead{
+      text-align: center;
+      padding-bottom: 30px;
+      h1{
+        font-size: 280%;
+        color: #4E4E4E;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-weight:600;
+      }
+      strong{
+        color: #2196F3;
+        font-size:280%;
+        font-weight: 600;
+      }
+    }
+    .ant-input{
+      height:44px;
+    }
+    .logbutton{
+      text-align: center;
+      button{
+        width: 181px;
+        height: 44px;
+        font-weight: 600;
+      }
+      i{
+        margin-left: 8px;
+        left: 10px;
+        top: 2px;
+        position: relative;
+        font-size: 135%;
+      }
+      .ant-btn-primary:hover{
+        background-color: rgba(21, 101, 192, 1);
+      }
+    }
+  }
+}

@@ -1,0 +1,389 @@
+@import '../../../assets/variables.scss';
+
+.btn-g {
+  @include btn-g;
+}
+
+.btn-b {
+  @include btn-b;
+}
+
+.unmconf-wrapper {
+  background-color: #FAFAFA;
+  background: url('../../../assets/images/unm-configuration-bg.png') left top no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  padding: 0% 4%;
+
+  .unmconf-left-data {
+    background: rgb(255, 255, 255, .9);
+    padding: 0px 15px;
+    width: 100%;
+    max-width: 317px;
+    border-radius: 0 0 20px 20px;
+
+    .logo-search {
+      text-align: center;
+      padding: 45px 20px 0px;
+
+      img {
+        max-width: 62%;
+      }
+
+      .search {
+        margin-top: 32px;
+        border-bottom: 1px solid #dddddd;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+
+        .ant-form-item {
+          margin-bottom: 0px;
+
+          .ant-input {
+            background: linear-gradient(to bottom, #0BB2BC, #1F98EF);
+            ;
+            color: #ffffff;
+            border-radius: 8px;
+            height: 40px;
+          }
+        }
+
+        .anticon {
+          color: #ffffff;
+        }
+
+        ::placeholder {
+          color: #ffffff;
+        }
+      }
+    }
+
+    ul {
+      padding: 0px;
+      margin: 0px;
+
+      li {
+        padding-bottom: 15px;
+
+        a {
+          color: #6b6b6b;
+          font-size: 90%;
+
+          &:hover {
+            color: rgb(11, 194, 169);
+          }
+        }
+
+        .router-link-active {
+          color: rgb(11, 194, 169);
+          color: #0bc2a9;
+        }
+      }
+    }
+
+  }
+
+  .unmconf-right-data {
+    width: 100%;
+    margin: 30px 0px 0px 0px;
+    overflow: hidden;
+    padding-bottom: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    .unconf-right-header {
+      display: flex;
+      justify-content: space-between;
+
+      .left-header {
+        h1 {
+          color: #fff;
+          font-weight: 600;
+          margin-bottom: 0px;
+          font-size: 280%
+        }
+      }
+
+      .right-header {
+        ul {
+          display: inline-flex;
+          padding: 13px 0px 0px 0px;
+          margin: 0px;
+
+          li {
+            color: #ffffff;
+            font-size: 140%;
+
+            &:first-child {
+              margin-right: 15px;
+
+              .anticon {
+                border: 1px solid #ffffff;
+                border-radius: 100%;
+              }
+            }
+
+            .anticon {
+              margin-right: 5px;
+              font-size: 125%;
+            }
+
+            img {
+              width: 18px;
+              height: 18px;
+              margin-right: 5px;
+              position: relative;
+              top: -2px;
+            }
+
+            a {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+
+    .unconf-right-page-data {
+      background: #fff;
+      min-height: 442px;
+      // padding: 30px 0px;
+      border-radius: 20px;
+      border-top-left-radius: 0px;
+      margin-top: 25px;
+      padding-bottom: 50px;
+
+      .tab-content {
+        .ant-form-item-label label {
+          color: #666666;
+        }
+      }
+    }
+  }
+}
+
+.router-link-active {
+  color: rgb(11, 194, 169);
+  color: #0bc2a9;
+}
+
+.operate {
+  margin-bottom: 16px;
+}
+
+.operate span {
+  margin-left: 8px;
+}
+
+.conorlog {
+  float: left;
+  padding: 5px 0px;
+  border-radius: 10px 10px 0px 0px;
+  text-align: center;
+
+  img {
+    width: 163px;
+    height: 56px;
+  }
+}
+
+.action-div {
+  background: #F2F2F2;
+  padding: 20px 0;
+}
+
+.table-div table {
+  width: 100%;
+}
+
+.table-div {
+  .top-media-right {
+    width: 50%;
+    padding: 20px;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .top-media-left {
+    width: 50%;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .second-media-right {
+    width: 50%;
+    height: 450px;
+    padding: 20px;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+
+ textarea {
+     border: 0px;
+    font-size: 14px;
+    outline: 0;
+    height: 500px !important;
+    
+  }
+  textarea:disabled {
+ background: transparent;
+   
+ }
+  .second-media-left {
+    width: 50%;
+    height: 450px;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+  }
+
+  .third-media-right {
+    width: 100%;
+    height: 30px;
+    padding-left: 15px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .third-media-left {
+    width: 100%;
+    height: 30px;
+    padding-left: 15px;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.input-div {
+  display: flex;
+  line-height: normal;
+}
+
+.input-div input {
+  width: 700px;
+}
+
+.input-div nz-form-label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 30px !important;
+  // margin-left: 20px;
+}
+
+.input-div img {
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.compare {
+  margin-bottom: 0;
+  margin-top: 8px;
+  padding-right: 15px;
+  font-family: 'Poppins';
+  font-weight: 410;
+  font-style: normal;
+  font-size: 13px;
+  color: #FF1C1C;
+  cursor: pointer;
+}
+
+.stop {
+  color: #FF6600;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+  padding-right: 15px;
+}
+
+.result {
+  color: #009688;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+  // padding-right: 15px;
+  // margin-right: 15px;
+}
+
+.ant-form-item-label {
+
+  font-family: 'Open Sans Bold', 'Open Sans Regular', 'Open Sans';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 13px;
+  color: #666666 !important;
+}
+
+.dynamic-delete-button {
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  font-size: 24px;
+  color: #999;
+  transition: all 0.3s;
+}
+
+.dynamic-add-button {
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  font-size: 24px;
+  color: #42a7ff;
+  transition: all 0.3s;
+  border-radius: 50px;
+}
+
+.dynamic-delete-button:hover {
+  color: #777;
+}
+
+.passenger-input {
+  width: 85% !important;
+  margin-right: 8px;
+}
+
+[nz-form] {
+  max-width: 600px;
+}
+
+.add-button {
+  width: 60%;
+}
+
+.ant-tag,
+.ant-tag a,
+.ant-tag a:hover {
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+.tagdiv {
+  background: #fff;
+  width: 600px;
+  height: 32px;
+  border: 0.5px solid #ccc;
+  border-radius: 5px;
+}
+
+.filter {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1400px) {
+  .unmconf-wrapper {
+
+    padding: 0% 2%;
+  }
+
+  .tagdiv {
+    background: #fff;
+    width: 400px;
+  }
+
+  .input-div input {
+    width: 500px;
+  }
+
+}

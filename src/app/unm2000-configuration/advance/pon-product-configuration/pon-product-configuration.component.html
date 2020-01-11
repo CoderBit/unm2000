@@ -1,0 +1,95 @@
+<section class="pon-product-configuration">
+  <form nz-form class="ant-advanced-search-form" [formGroup]="ponForm" (ngSubmit)="submitForm()">
+    <nz-collapse [nzBordered]="true" class="basic-configuration mb-3">
+      <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.title" [nzActive]="panel.active">
+        <nz-spin [nzSpinning]="isSpinning">
+          <div class="nz-collapse-data">
+            <div nz-row>
+              <div nz-row [nzGutter]="24">
+                <div nz-col [nzXl]="12" [nzXXl]="8">
+                  <nz-form-item nzFlex>
+                    <nz-form-label>{{translate.instant('PON Flow Function Switch')}} </nz-form-label>
+                    <nz-form-control>
+                      <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}"
+                        formControlName="ponflowswitch"></nz-switch>
+                    </nz-form-control>
+                  </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="12" [nzXXl]="8">
+                  <nz-form-item nzFlex>
+                    <nz-form-label>{{translate.instant('Display Board Version')}}</nz-form-label>
+                    <nz-form-control nzErrorTip="Required!">
+                      <!-- <input nz-input  formControlName="displayboardversion"/> -->
+                      <nz-select formControlName="displayboardversion" nzPlaceHolder="Choose">
+                        <nz-option nzValue="true" nzLabel="{{translate.instant('True')}}"></nz-option>
+                        <nz-option nzValue="false" nzLabel="{{translate.instant('False')}}"></nz-option>
+                      </nz-select>
+                    </nz-form-control>
+                  </nz-form-item>
+                </div>
+                <div nz-col [nzXl]="12" [nzXXl]="8">
+                  <nz-form-item nzFlex>
+                    <nz-form-label>{{translate.instant('Onu Light Polling Time')}}</nz-form-label>
+                    <nz-form-control [nzErrorTip]="pollingTimeError">
+                      <input nz-input formControlName="onupollingtime" style="width:80px; margin: 0 .5rem;" />{{translate.instant('Seconds')}}
+                      <ng-template #pollingTimeError let-control>
+                        <ng-container *ngIf="control.hasError('pattern')">
+                            {{translate.instant('Time is incorrect!')}}
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('required')">
+                            {{translate.instant('Required!')}}
+                        </ng-container>
+                      </ng-template>
+                    </nz-form-control>
+                  </nz-form-item>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <nz-collapse [nzBordered]="true" class="ONU-Double-Name-Detection-Cofiguration">
+      <nz-collapse-panel *ngFor="let panel of panel2" [nzHeader]="panel.title" [nzActive]="panel.active">
+        <nz-spin [nzSpinning]="isSpinning">
+          <div class="nz-collapse-data">
+            <div nz-row>
+              <div nz-col nzSpan="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Onu Name Check')}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}" formControlName="onunamecheck">
+                    </nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col nzSpan="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Onu FriendName Check')}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}"
+                      formControlName="onufriendcheck"></nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col nzSpan="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label>{{translate.instant('Onu Mac Check')}}</nz-form-label>
+                  <nz-form-control>
+                    <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}" formControlName="onumaccheck">
+                    </nz-switch>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <div nz-col [nzSpan]="24" class="search-area">
+      <button nz-button [nzType]="'primary'" class="btn-b" [nzLoading]="isLoading">{{translate.instant('Save')}}</button>
+      <button type="button" nz-button [nzType]="'primary'" class="btn-g ml-1"
+        (click)="fetchPonproductData()">{{translate.instant('Reload')}}</button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,26 @@
+<section class="business-configuration">
+  <form nz-form class="ant-advanced-search-form" [formGroup]="businessForm" (ngSubmit)="submitForm()">
+    <nz-collapse [nzBordered]="true">
+      <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.title" [nzActive]="panel.active">
+          <nz-spin [nzSpinning]="isSpinning">
+        <div class="nz-collapse-data">
+          <div nz-row [nzGutter]="30">
+            <div nz-col [nzSpan]="12">
+              <nz-form-item nzFlex>
+                <nz-form-label>{{translate.instant('single_ne_service_configuration')}} </nz-form-label>
+                <nz-form-control>
+                  <nz-switch nzCheckedChildren="{{translate.instant('Enable')}}" nzUnCheckedChildren="{{translate.instant('Disable')}}" formControlName="singleNeServiceSwitch"></nz-switch>
+                </nz-form-control>
+              </nz-form-item>
+            </div>
+          </div>
+        </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <div nz-col [nzSpan]="24" class="search-area">
+      <button nz-button [nzType]="'primary'" class="btn-b" [nzLoading]="isLoading">{{translate.instant('Save')}}</button>
+      <button type="button" nz-button [nzType]="'primary'" class="btn-g ml-1"  (click)="fetchBusinessData()">{{translate.instant('Reload')}}</button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,26 @@
+{
+  "panels": [
+    {
+      "active": true,
+      "name": "NBI Configuration",
+      "childPanel": [
+        {
+          "active": false,
+          "name": "Common Configuration"
+        },
+        {
+          "active": false,
+          "name": "Corba Configuration"
+        },
+        {
+          "active": false,
+          "name": "I2 Configuration"
+        },
+        {
+          "active": false,
+          "name": "Socket Configuration"
+        }
+      ]
+    }
+  ]
+}

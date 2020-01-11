@@ -1,0 +1,82 @@
+<section class="netconf-configuration">
+  <form nz-form class="ant-advanced-search-form" [formGroup]="netconfForm" (ngSubmit)="submitForm()">
+    <nz-collapse [nzBordered]="true">
+      <nz-collapse-panel *ngFor="let panel of panels" nzHeader="{{translate.instant('Basic Configuration')}}" [nzActive]="panel.active">
+        <nz-spin [nzSpinning]="isSpinning">
+          <div class="nz-collapse-data">
+            <div nz-row [nzGutter]="24">
+              <div nz-col [nzSpan]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('Username')}}
+                    <span nz-tooltip nzTitle="{{translate.instant('net_lable_user_tooltip')}}">
+                      <i nz-icon nzType="question" nzTheme="outline"></i>
+                    </span>
+                  </nz-form-label>
+                  <nz-form-control [nzErrorTip]="usernameError">
+                    <input nz-input formControlName="netConfUserName" />
+                    <ng-template #usernameError let-control>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Username Required')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('maxlength')">
+                          {{translate.instant('Maximum Length Should be 15')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzSpan]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired>{{translate.instant('Password')}}
+                    <span nz-tooltip nzTitle="{{translate.instant('net_lable_pass_tooltip')}}">
+                      <i nz-icon nzType="question" nzTheme="outline"></i>
+                    </span>
+                  </nz-form-label>
+                  <nz-form-control [nzErrorTip]="passwordError">
+                    <input nz-input type="password" formControlName="netConfPassword" />
+                    <ng-template #passwordError let-control>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Password Required')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('maxlength')">
+                          {{translate.instant('Maximum Length Should be 15')}}
+                      </ng-container>
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+              <div nz-col [nzSpan]="8">
+                <nz-form-item nzFlex>
+                  <nz-form-label nzRequired> {{translate.instant('Port')}}
+                    <span nz-tooltip nzTitle="{{translate.instant('net_lable_port_tooltip')}}">
+                      <i nz-icon nzType="question" nzTheme="outline"></i>
+                    </span>
+                  </nz-form-label>
+                  <nz-form-control [nzErrorTip]="portError">
+                    <input nz-input formControlName="netConfPort" />
+                    <ng-template #portError let-control>
+                      <ng-container *ngIf="control.hasError('required')">
+                          {{translate.instant('Port Required')}}
+                      </ng-container>
+                      <ng-container *ngIf="control.hasError('pattern')">
+                          {{translate.instant('Invalid Input')}}
+                      </ng-container>
+                      <!-- <ng-container *ngIf="control.hasError('maxlength')">
+														Maximum Length Should be 6
+													</ng-container> -->
+                    </ng-template>
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+        </nz-spin>
+      </nz-collapse-panel>
+    </nz-collapse>
+    <div nz-col [nzSpan]="24" class="search-area">
+      <button nz-button [nzType]="'primary'" class="btn-b" [nzLoading]="isLoading">{{translate.instant('Save')}} </button>
+      <button nz-button type="button" [nzType]="'primary'" class="btn-g ml-1"
+        (click)="fetchNetConfData()">{{translate.instant('Reload')}}</button>
+    </div>
+  </form>
+</section>

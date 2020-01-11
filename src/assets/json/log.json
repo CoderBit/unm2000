@@ -1,0 +1,14 @@
+{
+  "panels": [
+    {
+      "active": true,
+      "name": "Common Configuration",
+      "childPanel": [
+        {
+          "active": false,
+          "name": "Log Configuration"
+        }
+      ]
+    }
+  ]
+}

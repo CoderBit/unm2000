@@ -1,0 +1,77 @@
+{
+  "panels": [
+    {
+      "active": true,
+      "name": "Basic Configuration",
+      "childPanels": [
+        {
+          "active": false,
+          "name": "Common Configuration"
+        },
+        {
+          "active": false,
+          "name": "Performance Configuration"
+        },
+        {
+          "active": false,
+          "name": "Netconf Configuration"
+        },
+        {
+          "active": false,
+          "name": "Software Download Configuration"
+        },
+        {
+          "active": false,
+          "name": "Ason Configuration"
+        },
+        {
+          "active": false,
+          "name": "Alarm Configuration"
+        }
+      ]
+    },
+    {
+      "active": true,
+      "name": "Advanced Configuration",
+      "childPanels": [
+        {
+          "active": false,
+          "name": "Smart Clock Configuration",
+          "childchildPanels": [
+            {
+              "active": false,
+              
+              "name": "Support NE Type"
+            },
+            {
+              "active": false,
+              "name": "Support Board Type"
+            }
+          ]
+        },
+        {
+          "active": false,
+          "name": "Telemetry Configuration"
+        },
+        {
+          "active": false,
+          "name": "Business Configuration"
+        },
+        {
+          "active": false,
+          "name": "PON Product Configuration"
+        }
+      ]
+    },
+    {
+      "active": true,
+      "name": "Simulation Test Configuration",
+      "childPanels": [
+        {
+          "active": false,
+          "name": "Simulation Test Configuration"
+        }
+      ]
+    }
+  ]
+}
